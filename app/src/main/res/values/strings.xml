@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DeepenAndroidHub</string>
+    <string name="start_new_activity">start new activity</string>
+    <string name="jump_to_text_view">to text view</string>
+    <string name="to_bezier_path">to bezier path</string>
+    <string name="reset">reset</string>
+    <string name="to_paint_method_demo">to paint method demo</string>
+    <string name="to_start_activity">to start activity</string>
+    <string name="to_web_view">to web view</string>
+    <string name="test_bar_code">to test bar code</string>
+    <string name="auto_loadmore_loading">Loading…</string>
+    <string name="auto_loadmore_load_finish">All data is loaded</string>
+    <string name="auto_loadmore_load_failed">Loading failed, please click me to try again.</string>
+    <string name="from">from</string>
+    <string name="news_center">news_center</string>
+    <string name="no_news">no news</string>
+</resources>

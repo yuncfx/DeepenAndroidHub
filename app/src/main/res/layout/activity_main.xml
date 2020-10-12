@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".codelib.activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_exit_btn"
+            style="@style/BackButton"
+            android:layout_gravity="left|top" />
+
+        <Button
+            android:id="@+id/btn_to_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jump_to_text_view" />
+
+        <Button
+            android:id="@+id/btn_start_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_new_activity"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/btn_to_bezier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_bezier_path"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/btn_to_paint_method_demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_paint_method_demo"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/btn_to_start_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_start_activity" />
+
+        <Button
+            android:id="@+id/btn_to_start_webview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_web_view" />
+
+        <Button
+            android:id="@+id/btn_to_test_bar_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_bar_code" />
+
+        <com.deepen.android.hub.codelib.view.PaintViewBasic
+            android:id="@+id/paint_view_basic"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <com.deepen.android.hub.codelib.view.PaintViewPathText
+            android:id="@+id/paint_view_path_text"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.deepen.android.hub.codelib.view.PaintViewCanvas
+            android:id="@+id/paint_view_canvas"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <com.deepen.android.hub.codelib.view.PaintViewRegion
+            android:id="@+id/paint_view_region"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <com.deepen.android.hub.codelib.view.PaintViewRegionCross
+            android:id="@+id/paint_view_region_cross"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <com.deepen.android.hub.codelib.view.PaintViewCanvasOperation
+            android:id="@+id/paint_view_canvas_operation"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@color/colorPrimary" />
+    </LinearLayout>
+
+</ScrollView>

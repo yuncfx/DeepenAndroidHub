@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ItemBgView">
+        <attr name="groups" format="integer"/>
+        <attr name="bg_width" format="integer"/>
+        <attr name="bg_height" format="integer"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="blur_default_color_bg">#7a000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="sub_gray">#decdcdcd</color>
+    <color name="dash_gray">#3d000000</color>
+
+    <color name="alex_color">#ff3357aa</color>
+    <color name="joanna_color">#ff40aa52</color>
+    <color name="shailen_color">#ffaa713b</color>
+    <color name="chris_color">#ffaa3699</color>
+</resources>
