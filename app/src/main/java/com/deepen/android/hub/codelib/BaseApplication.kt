@@ -3,6 +3,8 @@ package com.deepen.android.hub.codelib
 import android.app.Application
 import android.content.Context
 import com.blankj.utilcode.util.LogUtils
+import com.blankj.utilcode.util.Utils
+import com.bumptech.glide.util.Util
 import com.tencent.smtt.sdk.QbSdk
 import com.tencent.smtt.sdk.QbSdk.PreInitCallback
 
@@ -14,6 +16,7 @@ class BaseApplication constructor() : Application() {
         super.onCreate()
         sMainInstance = this
         initX5()
+        Utils.init(this)
     }
 
     private fun initX5() {

@@ -65,40 +65,46 @@
             android:layout_height="wrap_content"
             android:text="@string/test_bar_code" />
 
-        <com.deepen.android.hub.codelib.view.PaintViewBasic
-            android:id="@+id/paint_view_basic"
-            android:layout_width="200dp"
-            android:layout_height="200dp" />
+        <Button
+            android:id="@+id/bind_aidl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_bind_aidl" />
 
-        <com.deepen.android.hub.codelib.view.PaintViewPathText
-            android:id="@+id/paint_view_path_text"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
+        <!--        <com.deepen.android.hub.codelib.view.PaintViewBasic-->
+        <!--            android:id="@+id/paint_view_basic"-->
+        <!--            android:layout_width="200dp"-->
+        <!--            android:layout_height="200dp" />-->
 
-        <com.deepen.android.hub.codelib.view.PaintViewCanvas
-            android:id="@+id/paint_view_canvas"
-            android:layout_width="match_parent"
-            android:layout_height="400dp" />
+        <!--        <com.deepen.android.hub.codelib.view.PaintViewPathText-->
+        <!--            android:id="@+id/paint_view_path_text"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="200dp" />-->
 
-        <com.deepen.android.hub.codelib.view.PaintViewRegion
-            android:id="@+id/paint_view_region"
-            android:layout_width="match_parent"
-            android:layout_height="400dp" />
+        <!--        <com.deepen.android.hub.codelib.view.PaintViewCanvas-->
+        <!--            android:id="@+id/paint_view_canvas"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="400dp" />-->
 
-        <com.deepen.android.hub.codelib.view.PaintViewRegionCross
-            android:id="@+id/paint_view_region_cross"
-            android:layout_width="match_parent"
-            android:layout_height="400dp" />
+        <!--        <com.deepen.android.hub.codelib.view.PaintViewRegion-->
+        <!--            android:id="@+id/paint_view_region"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="400dp" />-->
 
-        <com.deepen.android.hub.codelib.view.PaintViewCanvasOperation
-            android:id="@+id/paint_view_canvas_operation"
-            android:layout_width="match_parent"
-            android:layout_height="400dp" />
+        <!--        <com.deepen.android.hub.codelib.view.PaintViewRegionCross-->
+        <!--            android:id="@+id/paint_view_region_cross"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="400dp" />-->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:background="@color/colorPrimary" />
+        <!--        <com.deepen.android.hub.codelib.view.PaintViewCanvasOperation-->
+        <!--            android:id="@+id/paint_view_canvas_operation"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="400dp" />-->
+
+        <!--        <View
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:background="@color/colorPrimary" />-->
     </LinearLayout>
 
 </ScrollView>

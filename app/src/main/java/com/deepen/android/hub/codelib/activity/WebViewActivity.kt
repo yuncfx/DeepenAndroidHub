@@ -32,11 +32,15 @@ class WebViewActivity constructor() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
         getWindow().setFormat(PixelFormat.TRANSLUCENT)
-        getWindow().setSoftInputMode((WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
-                or WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN))
+        getWindow().setSoftInputMode(
+            (WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+                    or WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
+        )
         setContentView(R.layout.activity_webview)
         val intent: Intent? = getIntent()
         if (intent == null) {
@@ -60,9 +64,9 @@ class WebViewActivity constructor() : AppCompatActivity() {
         webSettings?.setAppCachePath(cacheDirPath)
         webSettings?.setJavaScriptEnabled(true)
         val urlWithModifyTime: String? = intent.getStringExtra("merchantUrl")
-        LogUtils.d(TAG, " urlWithModifyTime = " + urlWithModifyTime)
-        LogUtils.d(TAG, " mUrl: " + mUrl)
-        mUrl = "www.baidu.com"
+        LogUtils.d(TAG, " urlWithModifyTime = " + (urlWithModifyTime ?: ""))
+        LogUtils.d(TAG, " mUrl: " + (mUrl ?: ""))
+        mUrl = "www.qq.com"
         if (!TextUtils.isEmpty(mUrl)) {
             mWebView?.loadUrl(mUrl)
         }
@@ -93,7 +97,8 @@ class WebViewActivity constructor() : AppCompatActivity() {
 
     private inner class HelloWebViewClient constructor() : WebViewClient() {
         public override fun shouldOverrideUrlLoading(
-                view: WebView, url: String): Boolean {
+            view: WebView, url: String
+        ): Boolean {
             if (!loadingFinished) {
                 redirect = true
             }
@@ -103,7 +108,8 @@ class WebViewActivity constructor() : AppCompatActivity() {
         }
 
         public override fun onPageStarted(
-                view: WebView, url: String, favicon: Bitmap) {
+            view: WebView?, url: String?, favicon: Bitmap?
+        ) {
             super.onPageStarted(view, url, favicon)
             loadingFinished = false
             //SHOW LOADING IF IT IS NOT ALREADY VISIBLE
