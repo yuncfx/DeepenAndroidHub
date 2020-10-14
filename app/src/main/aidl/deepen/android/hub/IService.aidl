@@ -1,5 +1,5 @@
 // IService.aidl
-package scut.carson_ho.service_server;
+package deepen.android.hub;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import java.util.List;
 interface IService {
     void test() = 100;
 
-    void test1(inout List<String> list) = 101;
+    void test1(inout List list) = 101;
 
     oneway void test2() = 102;
 }

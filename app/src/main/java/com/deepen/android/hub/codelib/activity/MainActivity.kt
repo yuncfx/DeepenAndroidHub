@@ -12,7 +12,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.deepen.android.hub.R
-import scut.carson_ho.service_server.IService
+import deepen.android.hub.IService
 
 
 class MainActivity constructor() : AppCompatActivity() {
@@ -106,9 +106,8 @@ class MainActivity constructor() : AppCompatActivity() {
             Log.d("MainActivity", "bind service clicked")
             Toast.makeText(this@MainActivity, "111111", Toast.LENGTH_SHORT).show()
 
-            //通过Intent指定服务端的服务名称和所在包，与远程Service进行绑定
-            //参数与服务器端的action要一致,即"服务器包名.aidl接口文件名"
-            val intent = Intent("com.deepen.android.serviceserver.IService")
+            //通过Intent指定服务端的服务名称和所在包，与远程Service进行绑定,参数与服务器端的action要一致
+            val intent = Intent("com.deepen.android.serviceserver.ddd")
 
             //Android5.0后无法只通过隐式Intent绑定远程Service
             //需要通过setPackage()方法指定包名
