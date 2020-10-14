@@ -1,11 +1,11 @@
 package test.puzzler;
 
-import test.shane.puzzler.another.CodeTalk;
 
 /**
  * @author shane
  */
 public class TypeIt {
+
     private static class ClickIt extends CodeTalk {
         void printMessage() {
             System.out.println("Hack");
@@ -22,5 +22,11 @@ public class TypeIt {
     public static void main(String[] args) {
         ClickIt clickit = new ClickIt();
         clickit.doIt();
+    }
+
+    private static class CodeTalk {
+        void doIt() {
+            System.out.println("doIt");
+        }
     }
 }

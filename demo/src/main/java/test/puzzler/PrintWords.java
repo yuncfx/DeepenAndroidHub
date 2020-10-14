@@ -1,9 +1,5 @@
 package test.puzzler;
 
-
-import test.shane.puzzler.another.Words;
-import test.shane.puzzler.another.Words3;
-
 /**
  * @author shane
  */
