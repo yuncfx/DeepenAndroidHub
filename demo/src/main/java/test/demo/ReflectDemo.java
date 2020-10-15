@@ -24,10 +24,10 @@ public class ReflectDemo {
 //            System.out.println(o);
         }
 
-        Constructor<ReflectBean> declaredConstructor = clazz.getDeclaredConstructor(null);
-        declaredConstructor.setAccessible(true);
-        ReflectBean bean = declaredConstructor.newInstance(null);
-        System.out.println(bean);
+//        Constructor<ReflectBean> declaredConstructor = clazz.getDeclaredConstructor(null);
+//        declaredConstructor.setAccessible(true);
+//        ReflectBean bean = declaredConstructor.newInstance(null);
+//        System.out.println(bean);
     }
 
     @Test
@@ -77,10 +77,10 @@ public class ReflectDemo {
     @Test
     public void testPrivateConstructor() throws Exception {
         Class<?> clazz = Class.forName("test.demo.ReflectBean");
-        Constructor<?> constructor = clazz.getDeclaredConstructor(null);
-        constructor.setAccessible(true);
-        ReflectBean bean = (ReflectBean) constructor.newInstance();
-        System.out.println(bean);
+//        Constructor<?> constructor = clazz.getDeclaredConstructor(null);
+//        constructor.setAccessible(true);
+//        ReflectBean bean = (ReflectBean) constructor.newInstance();
+//        System.out.println(bean);
     }
 
     @Test
@@ -156,11 +156,11 @@ public class ReflectDemo {
         Method reflect2 = clazz.getMethod("reflect2", int.class, String.class);
         reflect2.invoke(clazz.newInstance(), 20, "zhangsan");
 
-        Class<?> aClass = Class.forName("bean.SingletonBean");
-        Method getInstance = aClass.getDeclaredMethod("getInstance", null);
-        Object invoke = getInstance.invoke(null, null);
-
-        System.out.println(invoke);
+//        Class<?> aClass = Class.forName("bean.SingletonBean");
+//        Method getInstance = aClass.getDeclaredMethod("getInstance", null);
+//        Object invoke = getInstance.invoke(null, null);
+//
+//        System.out.println(invoke);
     }
 
     @Test
