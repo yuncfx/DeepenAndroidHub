@@ -10,8 +10,8 @@ import deepen.android.hub.IService
 /**
  * this class should be defined in server.
  *
- * 服务端包名:com.deepen.android.serviceserver
- * 服务端Service action :"com.deepen.android.serviceserver.ddd"
+ * 服务端包名:com.deepen.android.hub
+ * 服务端Service action :"com.deepen.android.hub.ddd"
  */
 class MyService : Service() {
     // 实例化AIDL的Stub类(Binder的子类)

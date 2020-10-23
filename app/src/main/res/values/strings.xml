@@ -15,4 +15,5 @@
     <string name="news_center">news_center</string>
     <string name="no_news">no news</string>
     <string name="test_bind_aidl">test_bind_aidl</string>
+    <string name="test_bind_messenger">test_bind_messenger</string>
 </resources>
