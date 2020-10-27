@@ -1,10 +1,10 @@
-package com.deepen.android.hub.codelib.coroutinescamp
+package com.deepen.android.hub.coroutinescamp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.deepen.android.hub.R
-import com.deepen.android.hub.codelib.coroutinescamp.model.Repo
+import com.deepen.android.hub.coroutinescamp.model.Repo
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.core.SingleObserver

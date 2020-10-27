@@ -1,10 +1,10 @@
-package com.deepen.android.hub.codelib.coroutinescamp.arch
+package com.deepen.android.hub.coroutinescamp.arch
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
-import com.deepen.android.hub.codelib.coroutinescamp.Api
-import com.deepen.android.hub.codelib.coroutinescamp.model.Repo
+import com.deepen.android.hub.coroutinescamp.Api
+import com.deepen.android.hub.coroutinescamp.model.Repo
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory

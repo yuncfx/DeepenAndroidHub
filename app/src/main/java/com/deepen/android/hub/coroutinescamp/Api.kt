@@ -1,6 +1,6 @@
-package com.deepen.android.hub.codelib.coroutinescamp
+package com.deepen.android.hub.coroutinescamp
 
-import com.deepen.android.hub.codelib.coroutinescamp.model.Repo
+import com.deepen.android.hub.coroutinescamp.model.Repo
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Call
 import retrofit2.http.GET

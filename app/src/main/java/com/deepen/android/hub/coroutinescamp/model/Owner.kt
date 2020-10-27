@@ -1,4 +1,4 @@
-package com.deepen.android.hub.codelib.coroutinescamp.model
+package com.deepen.android.hub.coroutinescamp.model
 
 data class Owner(
     val avatar_url: String,

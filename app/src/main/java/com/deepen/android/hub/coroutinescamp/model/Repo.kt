@@ -1,7 +1,4 @@
-package com.deepen.android.hub.codelib.coroutinescamp.model
-
-import com.deepen.android.hub.codelib.coroutinescamp.model.License
-import com.deepen.android.hub.codelib.coroutinescamp.model.Owner
+package com.deepen.android.hub.coroutinescamp.model
 
 data class Repo(
     val archive_url: String,

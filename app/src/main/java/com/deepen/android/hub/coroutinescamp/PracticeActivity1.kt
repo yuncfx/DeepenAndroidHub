@@ -1,4 +1,4 @@
-package com.deepen.android.hub.codelib.coroutinescamp
+package com.deepen.android.hub.coroutinescamp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
