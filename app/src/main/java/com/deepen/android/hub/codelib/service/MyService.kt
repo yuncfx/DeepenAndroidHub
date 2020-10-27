@@ -15,7 +15,7 @@ import deepen.android.hub.IService
  */
 class MyService : Service() {
     // 实例化AIDL的Stub类(Binder的子类)
-    var mBinder: IService.Stub = object : IService.Stub() {
+    private var mBinder: IService.Stub = object : IService.Stub() {
         //重写接口里定义的方法
         @Throws(RemoteException::class)
         override fun test() {

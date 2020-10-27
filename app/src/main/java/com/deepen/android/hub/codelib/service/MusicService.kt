@@ -20,26 +20,26 @@ class MusicService constructor() : MediaBrowserService() {
     private var mSession: MediaSession? = null
     private var mMediaPlayer: MediaPlayer? = null
     private var mPlaybackState: PlaybackState? = null
-    public override fun onCreate() {
+    override fun onCreate() {
         super.onCreate()
         Log.e(TAG, "onCreate-----------")
         mPlaybackState = PlaybackState.Builder()
                 .setState(PlaybackState.STATE_NONE, 0, 1.0f)
                 .build()
         mSession = MediaSession(this, "MusicService")
-        mSession!!.setCallback(SessionCallback)
+        mSession!!.setCallback(sessionCallback)
         mSession!!.setFlags(MediaSession.FLAG_HANDLES_TRANSPORT_CONTROLS)
         mSession!!.setPlaybackState(mPlaybackState)
 
         //设置token后会触发MediaBrowser.ConnectionCallback的回调方法
         //表示MediaBrowser与MediaBrowserService连接成功
-        setSessionToken(mSession!!.getSessionToken())
+        sessionToken = mSession!!.sessionToken
         mMediaPlayer = MediaPlayer()
-        mMediaPlayer!!.setOnPreparedListener(PreparedListener)
-        mMediaPlayer!!.setOnCompletionListener(CompletionListener)
+        mMediaPlayer!!.setOnPreparedListener(preparedListener)
+        mMediaPlayer!!.setOnCompletionListener(completionListener)
     }
 
-    public override fun onDestroy() {
+    override fun onDestroy() {
         super.onDestroy()
         if (mMediaPlayer != null) {
             mMediaPlayer!!.release()
@@ -51,12 +51,12 @@ class MusicService constructor() : MediaBrowserService() {
         }
     }
 
-    public override fun onGetRoot(clientPackageName: String, clientUid: Int, rootHints: Bundle?): BrowserRoot? {
+    override fun onGetRoot(clientPackageName: String, clientUid: Int, rootHints: Bundle?): BrowserRoot? {
         Log.e(TAG, "onGetRoot-----------")
         return BrowserRoot(MEDIA_ID_ROOT, null)
     }
 
-    public override fun onLoadChildren(parentId: String, result: Result<List<MediaBrowser.MediaItem>>) {
+    override fun onLoadChildren(parentId: String, result: Result<List<MediaBrowser.MediaItem>>) {
         Log.e(TAG, "onLoadChildren--------")
         //将信息从当前线程中移除，允许后续调用sendResult方法
         result.detach()
@@ -74,20 +74,20 @@ class MusicService constructor() : MediaBrowserService() {
     }
 
     private fun createMediaItem(metadata: MediaMetadata): MediaBrowser.MediaItem {
-        return MediaBrowser.MediaItem(metadata.getDescription(),
+        return MediaBrowser.MediaItem(metadata.description,
                 MediaBrowser.MediaItem.FLAG_PLAYABLE)
     }
 
     /**
      * 响应控制器指令的回调
      */
-    private val SessionCallback: MediaSession.Callback = object : MediaSession.Callback() {
+    private val sessionCallback: MediaSession.Callback = object : MediaSession.Callback() {
         /**
          * 响应MediaController.getTransportControls().play
          */
         public override fun onPlay() {
             Log.e(TAG, "onPlay")
-            if (mPlaybackState!!.getState() == PlaybackState.STATE_PAUSED) {
+            if (mPlaybackState!!.state == PlaybackState.STATE_PAUSED) {
                 mMediaPlayer!!.start()
                 mPlaybackState = PlaybackState.Builder()
                         .setState(PlaybackState.STATE_PLAYING, 0, 1.0f)
@@ -99,9 +99,9 @@ class MusicService constructor() : MediaBrowserService() {
         /**
          * 响应MediaController.getTransportControls().onPause
          */
-        public override fun onPause() {
+        override fun onPause() {
             Log.e(TAG, "onPause")
-            if (mPlaybackState!!.getState() == PlaybackState.STATE_PLAYING) {
+            if (mPlaybackState!!.state == PlaybackState.STATE_PLAYING) {
                 mMediaPlayer!!.pause()
                 mPlaybackState = PlaybackState.Builder()
                         .setState(PlaybackState.STATE_PAUSED, 0, 1.0f)
@@ -115,10 +115,10 @@ class MusicService constructor() : MediaBrowserService() {
          * @param uri
          * @param extras
          */
-        public override fun onPlayFromUri(uri: Uri, extras: Bundle) {
+        override fun onPlayFromUri(uri: Uri, extras: Bundle) {
             Log.e(TAG, "onPlayFromUri")
             try {
-                when (mPlaybackState!!.getState()) {
+                when (mPlaybackState!!.state) {
                     PlaybackState.STATE_PLAYING, PlaybackState.STATE_PAUSED, PlaybackState.STATE_NONE -> {
                         mMediaPlayer!!.reset()
                         mMediaPlayer!!.setDataSource(this@MusicService, uri)
@@ -141,37 +141,33 @@ class MusicService constructor() : MediaBrowserService() {
             }
         }
 
-        public override fun onPlayFromSearch(query: String, extras: Bundle) {}
+        override fun onPlayFromSearch(query: String, extras: Bundle) {}
     }
 
     /**
      * 监听MediaPlayer.prepare()
      */
-    private val PreparedListener: MediaPlayer.OnPreparedListener = object : MediaPlayer.OnPreparedListener {
-        public override fun onPrepared(mediaPlayer: MediaPlayer) {
-            mMediaPlayer!!.start()
-            mPlaybackState = PlaybackState.Builder()
-                    .setState(PlaybackState.STATE_PLAYING, 0, 1.0f)
-                    .build()
-            mSession!!.setPlaybackState(mPlaybackState)
-        }
+    private val preparedListener: MediaPlayer.OnPreparedListener = MediaPlayer.OnPreparedListener {
+        mMediaPlayer!!.start()
+        mPlaybackState = PlaybackState.Builder()
+            .setState(PlaybackState.STATE_PLAYING, 0, 1.0f)
+            .build()
+        mSession!!.setPlaybackState(mPlaybackState)
     }
 
     /**
      * 监听播放结束的事件
      */
-    private val CompletionListener: MediaPlayer.OnCompletionListener = object : MediaPlayer.OnCompletionListener {
-        public override fun onCompletion(mediaPlayer: MediaPlayer) {
-            mPlaybackState = PlaybackState.Builder()
-                    .setState(PlaybackState.STATE_NONE, 0, 1.0f)
-                    .build()
-            mSession!!.setPlaybackState(mPlaybackState)
-            mMediaPlayer!!.reset()
-        }
+    private val completionListener: MediaPlayer.OnCompletionListener = MediaPlayer.OnCompletionListener {
+        mPlaybackState = PlaybackState.Builder()
+            .setState(PlaybackState.STATE_NONE, 0, 1.0f)
+            .build()
+        mSession!!.setPlaybackState(mPlaybackState)
+        mMediaPlayer!!.reset()
     }
 
     companion object {
-        private val TAG: String = "MusicService"
-        val MEDIA_ID_ROOT: String = "__ROOT__"
+        private const val TAG: String = "MusicService"
+        const val MEDIA_ID_ROOT: String = "__ROOT__"
     }
 }

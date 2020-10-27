@@ -21,12 +21,11 @@ class DemoAdapter constructor(
 
   inner class ViewHolder constructor(view: View) : RecyclerView.ViewHolder(view) {
     // TODO: 声明组件
-    var textTitle: TextView
+    var textTitle: TextView = view.findViewById(R.id.text_title)
 
-    init {
+      init {
       // TODO: 注册组件,view.findViewById(R.id.xxx)
-      textTitle = view.findViewById(R.id.text_title)
-    }
+      }
   }
 
   open interface OnItemClickListener {
@@ -51,11 +50,10 @@ class DemoAdapter constructor(
   ): ViewHolder {
     // TODO: 为对应itemViewId赋值,例：R.layout.xxx
     val itemViewId: Int = R.layout.item_music
-    val holder: ViewHolder = ViewHolder(
+      return ViewHolder(
         LayoutInflater.from(context)
             .inflate(itemViewId, parent, false)
     )
-    return holder
   }
 
   public override fun onBindViewHolder(
@@ -63,7 +61,7 @@ class DemoAdapter constructor(
       position: Int
   ) {
     // TODO: 绑定组件的事件
-    holder.textTitle.setText(list?.get(position)?.description?.title)
+      holder.textTitle.text = list?.get(position)?.description?.title
 
     // 如果设置了回调，则设置点击事件
     if (mOnItemClickListener != null) {
