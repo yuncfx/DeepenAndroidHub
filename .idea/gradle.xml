@@ -5,9 +5,10 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="testRunner" value="PLATFORM" />
+        <option name="disableWrapperSourceDistributionNotification" value="true" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:/tools/gradle-6.4.1-all/gradle-6.4.1" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../tools/gradle-6.4.1-all/gradle-6.4.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />

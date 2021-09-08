@@ -1682,6 +1682,12 @@ public class PuzzlerTest {
         Date d = cal.getTime();
         // Deprecated, getDay很傻的
         System.out.println(d.getDay());
+
+        int i = cal.get(Calendar.DAY_OF_WEEK);
+        System.out.println("dayOfWeek:" + i);
+
+        i = cal.get(Calendar.DAY_OF_WEEK_IN_MONTH);
+        System.out.println("dayOfWeekInMonth:" + i);
     }
 
     /**
