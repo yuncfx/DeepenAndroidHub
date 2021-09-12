@@ -67,34 +67,34 @@ public class TestIterator {
 
         ListIterator<String> listIterator = aList.listIterator();
         listIterator.next();
-        // listIteratorçš„addæ–¹æ³•ä¼šæ’å…¥åˆ°å½“å‰ä½ç½®ï¼Œå¹¶ä¸”æŒ‡é’ˆä¼šæŒ‡å‘æ–°æ·»åŠ çš„å…ƒç´ ï¼Œnextä¹‹åï¼Œä¼šè·³è¿‡æ·»åŠ çš„æ–°å…ƒç´ 
+        // listIteratorµÄadd·½·¨»á²åÈëµ½µ±Ç°Î»ÖÃ£¬²¢ÇÒÖ¸Õë»áÖ¸ÏòĞÂÌí¼ÓµÄÔªËØ£¬nextÖ®ºó£¬»áÌø¹ıÌí¼ÓµÄĞÂÔªËØ
         listIterator.add("Added Element");
 
         for (String str : aList) {
             System.out.println(str);
         }
 
-        System.out.println("---æˆ‘æ˜¯åˆ†å‰²çº¿---");
+        System.out.println("---ÎÒÊÇ·Ö¸îÏß---");
 
         System.out.println("next : " + listIterator.next()); // 2
         System.out.println("next : " + listIterator.next()); // 3
 
         // remove element returned by last next method
-        listIterator.remove();// ç§»é™¤çš„æ˜¯å½“å‰æŒ‡é’ˆæŒ‡å‘çš„ä½ç½®
+        listIterator.remove();// ÒÆ³ıµÄÊÇµ±Ç°Ö¸ÕëÖ¸ÏòµÄÎ»ÖÃ
         listIterator.next();
         /**
          * Replaces the last element returned by {@link #next} or
          * {@link #previous} with the specified element (optional operation).
          * This call can be made only if neither {@link #remove} nor
          * {@link #add} have been called after the last call to {@code next} or
-         * {@code previous}. setå¿…é¡»åœ¨nextæˆ–previousæ–¹æ³•ä¹‹åè°ƒç”¨ï¼Œ
-         * å¦åˆ™ä¸‹é¢çš„forå¾ªç¯éå†ï¼Œä¸€ä¸ªä¹Ÿä¸ä¼šè¾“å‡ºï¼Œå› ä¸ºæŒ‡é’ˆä¸çŸ¥é“æŒ‡å“ªå»äº†ï¼Ÿ
+         * {@code previous}. set±ØĞëÔÚnext»òprevious·½·¨Ö®ºóµ÷ÓÃ£¬
+         * ·ñÔòÏÂÃæµÄforÑ­»·±éÀú£¬Ò»¸öÒ²²»»áÊä³ö£¬ÒòÎªÖ¸Õë²»ÖªµÀÖ¸ÄÄÈ¥ÁË£¿
          */
         listIterator.set("100");
         for (String str : aList) {
             System.out.println(str);
         }
-        System.out.println("---æˆ‘æ˜¯åˆ†å‰²çº¿---");
+        System.out.println("---ÎÒÊÇ·Ö¸îÏß---");
 
         List list = new LinkedList();
         list.add("A");
@@ -102,21 +102,21 @@ public class TestIterator {
         list.add("C");
         list.add("D");
 
-        // æ­¤å¤„indexæŒ‡å®šçš„æ˜¯listIteratorçš„èµ·å§‹ä½ç½®ï¼Œ
+        // ´Ë´¦indexÖ¸¶¨µÄÊÇlistIteratorµÄÆğÊ¼Î»ÖÃ£¬
         int index = list.size() - 2;
-        // å½“å‰iteræŒ‡å‘çš„æ˜¯ä½ç½®2(list.size()-2)ï¼Œ nextæŒ‡å‘çš„æ˜¯C(å®é™…ä½ç½®ä¸º2)ï¼Œ previousæŒ‡å‘çš„æ˜¯B
+        // µ±Ç°iterÖ¸ÏòµÄÊÇÎ»ÖÃ2(list.size()-2)£¬ nextÖ¸ÏòµÄÊÇC(Êµ¼ÊÎ»ÖÃÎª2)£¬ previousÖ¸ÏòµÄÊÇB
         ListIterator iter = list.listIterator(index);
 
         while (iter.hasPrevious()) {
             System.out.println(iter.previous()); // B
-            // æŠŠaæ”¾åœ¨Bçš„å‰é¢
+            // °Ña·ÅÔÚBµÄÇ°Ãæ
             iter.add("a");
             break;
         }
 
         while (iter.hasNext()) {
-            System.out.println(iter.next()); // å¦‚æœæ²¡æœ‰ä¸Šé¢çš„å¾ªç¯ï¼Œåˆ™æŒ‡å‘çš„æ˜¯C
-            // æŠŠaæ”¾åœ¨iter.next()çš„åé¢
+            System.out.println(iter.next()); // Èç¹ûÃ»ÓĞÉÏÃæµÄÑ­»·£¬ÔòÖ¸ÏòµÄÊÇC
+            // °Ña·ÅÔÚiter.next()µÄºóÃæ
             iter.add("a");
             break;
         }
@@ -125,7 +125,7 @@ public class TestIterator {
     }
 
     /**
-     * åœ¨æ²¡æœ‰æ˜¾ç¤ºè°ƒç”¨iteratorçš„æƒ…å†µä¸‹ï¼Œä»ç„¶ä¼šæŠ¥å¼‚å¸¸ï¼š Exception in thread "main"
+     * ÔÚÃ»ÓĞÏÔÊ¾µ÷ÓÃiteratorµÄÇé¿öÏÂ£¬ÈÔÈ»»á±¨Òì³££º Exception in thread "main"
      * java.util.ConcurrentModificationException at
      * java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901) at
      * java.util.ArrayList$Itr.next(ArrayList.java:851) at
@@ -152,7 +152,7 @@ public class TestIterator {
     }
 
     /**
-     * ä½¿ç”¨çš„æ˜¯iterator.remove()æ–¹æ³•, å› æ­¤æ²¡æœ‰å¼‚å¸¸
+     * Ê¹ÓÃµÄÊÇiterator.remove()·½·¨, Òò´ËÃ»ÓĞÒì³£
      */
     @Test
     public void testRemove() {

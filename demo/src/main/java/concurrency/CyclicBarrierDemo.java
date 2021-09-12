@@ -8,17 +8,17 @@ import java.util.concurrent.*;
 import org.junit.Test;
 
 /**
- * CyclicBarriersåœ¨å›ºå®šæ•°é‡çš„çº¿ç¨‹åœ¨ä¸æ—¶çš„éœ€è¦äº’ç›¸ç­‰å¾…çš„ç¨‹åºé‡Œï¼Œå¾ˆæœ‰ç”¨ã€‚
- * å¦‚åœ¨ç‹è€…è£è€€é‡Œï¼Œæ‰€æœ‰çš„ç©å®¶éƒ½å°±ç»ªæˆ–è¶…æ—¶åï¼Œæ¸¸æˆæ‰ä¼šæ­£å¼å¼€å§‹ã€‚
+ * CyclicBarriersÔÚ¹Ì¶¨ÊıÁ¿µÄÏß³ÌÔÚ²»Ê±µÄĞèÒª»¥ÏàµÈ´ıµÄ³ÌĞòÀï£¬ºÜÓĞÓÃ¡£
+ * ÈçÔÚÍõÕßÈÙÒ«Àï£¬ËùÓĞµÄÍæ¼Ò¶¼¾ÍĞ÷»ò³¬Ê±ºó£¬ÓÎÏ·²Å»áÕıÊ½¿ªÊ¼¡£
  * 
- * å¯ä»¥é‡å¤ä½¿ç”¨ï¼Œ CyclicBarrierå¯ä»¥åœ¨æ‰€æœ‰çº¿ç¨‹éƒ½é‡Šæ”¾åï¼Œ åˆæ¢å¤åˆ°åˆå§‹çŠ¶æ€ã€‚
+ * ¿ÉÒÔÖØ¸´Ê¹ÓÃ£¬ CyclicBarrier¿ÉÒÔÔÚËùÓĞÏß³Ì¶¼ÊÍ·Åºó£¬ ÓÖ»Ö¸´µ½³õÊ¼×´Ì¬¡£
  * 
- * {@link CyclicBarrier#CyclicBarrier(int parties, Runnable barrierAction)} //çº¿ç¨‹åˆ°è¾¾æ …æ å¤„ï¼Œä¼˜å…ˆæ‰§è¡ŒbarrierAction
- * {@link CyclicBarrier#CyclicBarrier(int parties)} // parties å¿…é¡»ç­‰äºçº¿ç¨‹æ•°ï¼Œå¦‚æœçº¿ç¨‹æ•°å°äºpartiesï¼Œ åˆ™æ‰€æœ‰çº¿ç¨‹éƒ½ä¼šblockï¼Œ å¦åˆ™ï¼Œå¤šå‡ºæ¥çš„çº¿ç¨‹ä¼šblockã€‚
- * {@link CyclicBarrier#await()} //æ‰€æœ‰çº¿ç¨‹éƒ½æ‰§è¡Œåˆ°æ …æ å¤„å‰ï¼Œå¿…é¡»æŒç»­ç­‰å¾…, è¿ç»­è°ƒç”¨await, å¯é‡å¤ä½¿ç”¨barrier.
- * {@link CyclicBarrier#reset()} //reset barrier, æ …æ åœ¨æ‰€æœ‰çº¿ç¨‹é‡Šæ”¾åï¼Œåˆé‡æ–°å¯ç”¨, é€šå¸¸æˆ‘ä»¬ä¸åº”è¯¥æ‰‹åŠ¨è°ƒç”¨resetæ–¹æ³•ã€‚
+ * {@link CyclicBarrier#CyclicBarrier(int parties, Runnable barrierAction)} //Ïß³Ìµ½´ïÕ¤À¸´¦£¬ÓÅÏÈÖ´ĞĞbarrierAction
+ * {@link CyclicBarrier#CyclicBarrier(int parties)} // parties ±ØĞëµÈÓÚÏß³ÌÊı£¬Èç¹ûÏß³ÌÊıĞ¡ÓÚparties£¬ ÔòËùÓĞÏß³Ì¶¼»áblock£¬ ·ñÔò£¬¶à³öÀ´µÄÏß³Ì»áblock¡£
+ * {@link CyclicBarrier#await()} //ËùÓĞÏß³Ì¶¼Ö´ĞĞµ½Õ¤À¸´¦Ç°£¬±ØĞë³ÖĞøµÈ´ı, Á¬Ğøµ÷ÓÃawait, ¿ÉÖØ¸´Ê¹ÓÃbarrier.
+ * {@link CyclicBarrier#reset()} //reset barrier, Õ¤À¸ÔÚËùÓĞÏß³ÌÊÍ·Åºó£¬ÓÖÖØĞÂ¿ÉÓÃ, Í¨³£ÎÒÃÇ²»Ó¦¸ÃÊÖ¶¯µ÷ÓÃreset·½·¨¡£
  * 
- * åŸç†ï¼šReentrantLock å’Œ condition
+ * Ô­Àí£ºReentrantLock ºÍ condition
  * 
  * @author Shane
  *
@@ -27,7 +27,7 @@ public class CyclicBarrierDemo {
 
 	public static void main(String[] args) {
 
-		// preAction ä¼˜å…ˆæ‰§è¡Œ
+		// preAction ÓÅÏÈÖ´ĞĞ
 		CyclicBarrier barrier = new CyclicBarrier(3, new Runnable() {
 
 			@Override

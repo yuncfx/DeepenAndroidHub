@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 3ä¸ªçº¿ç¨‹Aï¼Œ Bï¼Œ Cï¼Œ ä»¥Aï¼ŒB, Cçš„é¡ºåºè¾“å‡ºç»“æœ
+ * 3¸öÏß³ÌA£¬ B£¬ C£¬ ÒÔA£¬B, CµÄË³ĞòÊä³ö½á¹û
  */
 public class OutputInSequenceDemo {
     private volatile int current = 0;

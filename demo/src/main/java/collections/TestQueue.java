@@ -48,25 +48,25 @@ public class TestQueue {
         queue.add("A");
         queue.add("B");
 
-        // ç«‹åˆ»æ’å…¥ä¸€ä¸ªqueueï¼Œ
-        // å¦‚æœè¯¥queueæ˜¯ capacity-restrictedï¼Œæ¨èä½¿ç”¨add
-        // addç”¨åœ¨é“¾è¡¨ä¸­ï¼Œofferç”¨åœ¨é˜Ÿåˆ—ä¸­
+        // Á¢¿Ì²åÈëÒ»¸öqueue£¬
+        // Èç¹û¸ÃqueueÊÇ capacity-restricted£¬ÍÆ¼öÊ¹ÓÃadd
+        // addÓÃÔÚÁ´±íÖĞ£¬offerÓÃÔÚ¶ÓÁĞÖĞ
         queue.offer("C");
         queue.offer("D");
 
-        // è·å–å¹¶ç§»é™¤å¤´å…ƒç´ , å¦‚æœé˜Ÿåˆ—ä¸ºç©ºï¼ŒæŠ›å‡ºå¼‚å¸¸NoSuchElementException
+        // »ñÈ¡²¢ÒÆ³ıÍ·ÔªËØ, Èç¹û¶ÓÁĞÎª¿Õ£¬Å×³öÒì³£NoSuchElementException
         System.out.println("remove: " + queue.remove());
         System.out.println(queue);
 
-        // è·å–å¤´å…ƒç´ ï¼Œä¸ç§»é™¤, å¦‚æœé˜Ÿåˆ—ä¸ºç©ºï¼ŒæŠ›å‡ºå¼‚å¸¸NoSuchElementException
+        // »ñÈ¡Í·ÔªËØ£¬²»ÒÆ³ı, Èç¹û¶ÓÁĞÎª¿Õ£¬Å×³öÒì³£NoSuchElementException
         System.out.println("element: " + queue.element());
         System.out.println(queue);
 
-        // è·å–å¹¶ç§»é™¤å¤´å…ƒç´ ï¼Œ å¦‚æœé˜Ÿåˆ—ä¸ºç©ºï¼Œè¿”å›null
+        // »ñÈ¡²¢ÒÆ³ıÍ·ÔªËØ£¬ Èç¹û¶ÓÁĞÎª¿Õ£¬·µ»Ønull
         System.out.println("poll: " + queue.poll());
         System.out.println(queue);
 
-        // è·å–å¤´å…ƒç´ ï¼Œä¸ç§»é™¤ï¼Œå¦‚æœé˜Ÿåˆ—ä¸ºç©ºï¼Œè¿”å›null
+        // »ñÈ¡Í·ÔªËØ£¬²»ÒÆ³ı£¬Èç¹û¶ÓÁĞÎª¿Õ£¬·µ»Ønull
         System.out.println("peek: " + queue.peek());
         System.out.println(queue);
     }

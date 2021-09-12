@@ -16,7 +16,7 @@ public class NavigableSetDemo {
  
         System.out.println("Ascending order (default): " + ns); // Ascending order (default): [1, 2, 3, 4, 5]
 
-        // 浠ラ�嗗簭褰㈠紡杈撳嚭
+        // 以逆序形式输出
         Iterator<Integer> descendingIterator = ns.descendingIterator();
         StringBuilder sb = new StringBuilder("Descending order: ");
         while (descendingIterator.hasNext()) {
@@ -26,11 +26,11 @@ public class NavigableSetDemo {
         System.out.println(sb); // Descending order: 5 4 3 2 1
 
         int greatest = ns.lower(3);
-        // 灏忎簬3鐨勬渶澶ф暟
+        // 小于3的最大数
         System.out.println("Lower of 3 = " + greatest); // Lower of 3 = 2
 
         int smallest = ns.higher(3);
-        // 澶т簬3鐨勬渶灏忔暟
+        // 大于3的最小数
         System.out.println("Higher of 3 = " + smallest); // Higher of 3 = 4
 
         String[] cities = { "A", "B", "C", "D", "E", "F", "O" };
@@ -39,9 +39,9 @@ public class NavigableSetDemo {
         for (String city : cities)
             citiesSet.add(city);
 
-        // 澶т簬绛変簬A鐨勬渶灏忔暟
+        // 大于等于A的最小数
         System.out.println(citiesSet.ceiling("A")); // A
-        // 灏忎簬绛変簬P鐨勬渶澶ф暟
+        // 小于等于P的最大数
         System.out.println(citiesSet.floor("P"));// O
 
     }

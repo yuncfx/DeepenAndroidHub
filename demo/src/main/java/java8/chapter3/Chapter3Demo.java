@@ -26,7 +26,7 @@ public class Chapter3Demo {
 
     }
     
-    //æ³¨æ„ä½ ä½¿ç”¨äº†Java 7ä¸­çš„å¸¦èµ„æºçš„ try è¯­å¥ï¼Œå®ƒå·²ç»ç®€åŒ–äº†ä»£ç ï¼Œå› ä¸ºä½ ä¸éœ€è¦æ˜¾å¼åœ°å…³é—­èµ„æºäº†
+    //×¢ÒâÄãÊ¹ÓÃÁËJava 7ÖĞµÄ´ø×ÊÔ´µÄ try Óï¾ä£¬ËüÒÑ¾­¼ò»¯ÁË´úÂë£¬ÒòÎªÄã²»ĞèÒªÏÔÊ½µØ¹Ø±Õ×ÊÔ´ÁË
     public static String processFile() throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
             return br.readLine();

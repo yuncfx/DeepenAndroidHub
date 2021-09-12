@@ -78,15 +78,15 @@ class SynchronizedExample {
     int a = 0;
     boolean flag = false;
 
-    public synchronized void writer() { // è·å–é”
+    public synchronized void writer() { // »ñÈ¡Ëø
         a = 1;
         flag = true;
-    } // é‡Šæ”¾é”
+    } // ÊÍ·ÅËø
 
-    public synchronized void reader() { // è·å–é”
+    public synchronized void reader() { // »ñÈ¡Ëø
         if (flag) {
             int i = a;
-        } // é‡Šæ”¾é”
+        } // ÊÍ·ÅËø
     }
 }
 

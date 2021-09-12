@@ -13,7 +13,7 @@ public class TestTreeMap {
     }
 
     /**
-     * firstKey, lastKey é€šè¿‡è¿™ä¸¤ä¸ªæ–¹æ³•ï¼Œå¯ä»¥å¿«é€Ÿçš„è®¿é—®å¤´éƒ¨çš„keyå’Œå°¾éƒ¨çš„key
+     * firstKey, lastKey Í¨¹ıÕâÁ½¸ö·½·¨£¬¿ÉÒÔ¿ìËÙµÄ·ÃÎÊÍ·²¿µÄkeyºÍÎ²²¿µÄkey
      */
     @Test
     public void test1() {
@@ -29,13 +29,13 @@ public class TestTreeMap {
     }
 
     /**
-     * é€†å‘éå†ä¸€ä¸ªTreeMap
+     * ÄæÏò±éÀúÒ»¸öTreeMap
      * 
      * SortedSet headMap(Object toKey) 
      * Map headMap = map.headMap(toKey+"\0"); //
-     * è¿™æ ·ä¹Ÿèƒ½åŒ…å«toKeyè¿™ä¸ªkey 
-     * SortedSet tailMap(Object fromKey) // æ³¨æ„ï¼Œå› ä¸ºæ¯”è¾ƒçš„æ˜¯fromKeyå’Œæ¯ä¸€ä¸ªkeyçš„å¤§å°ï¼ˆComparatorçš„compareæ–¹æ³•æˆ–è€…è‡ªèº«çš„compareToæ–¹æ³•ï¼Œå› æ­¤è¿™ä¸ª
-     * fromKeyä¸ä¸€å®šè¦åœ¨mapçš„æ‰€æœ‰keyä¸­ã€‚ï¼‰ 
+     * ÕâÑùÒ²ÄÜ°üº¬toKeyÕâ¸ökey 
+     * SortedSet tailMap(Object fromKey) // ×¢Òâ£¬ÒòÎª±È½ÏµÄÊÇfromKeyºÍÃ¿Ò»¸ökeyµÄ´óĞ¡£¨ComparatorµÄcompare·½·¨»òÕß×ÔÉíµÄcompareTo·½·¨£¬Òò´ËÕâ¸ö
+     * fromKey²»Ò»¶¨ÒªÔÚmapµÄËùÓĞkeyÖĞ¡££© 
      * SortedSet subMap(Object fromKey, Object toKey) 
      * fromKey <= map keys < toKey
      */

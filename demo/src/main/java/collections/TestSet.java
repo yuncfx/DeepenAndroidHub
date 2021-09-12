@@ -14,7 +14,7 @@ public class TestSet {
         
     }
 
-    // é»˜è®¤ä½¿ç”¨å‡åº
+    // Ä¬ÈÏÊ¹ÓÃÉıĞò
     @Test
     public void testTreeSet() {
         Set<String> set = new TreeSet<String>();
@@ -30,12 +30,12 @@ public class TestSet {
             System.out.println(element);
         }
 
-        // è½¬æ¢æˆæŒ‡å®šç±»å‹çš„æ•°ç»„ï¼Œè¿™é‡Œæ˜¯String
+        // ×ª»»³ÉÖ¸¶¨ÀàĞÍµÄÊı×é£¬ÕâÀïÊÇString
         String[] array = set.toArray(new String[set.size()]);
         Arrays.toString(array);
     }
 
-    // ç»´æŒæ’å…¥çš„é¡ºåº
+    // Î¬³Ö²åÈëµÄË³Ğò
     @Test
     public void testLinkedHashSet() {
         Set<String> set = new LinkedHashSet<String>();

@@ -18,9 +18,9 @@ public class _20_valid_bracket {
 		int len = s.length();
 		for (int i = 0; i < len; i++) {
 			char c = s.charAt(i);
-			if (map.containsKey(c)) { // å·¦æ‹¬å·
+			if (map.containsKey(c)) { // ×óÀ¨ºÅ
 				stack.push(c);
-			} else { // å³æ‹¬å·
+			} else { // ÓÒÀ¨ºÅ
 				if (stack.isEmpty()) return false;
 				
 				if (c != map.get(stack.pop())) return false;
@@ -35,9 +35,9 @@ public class _20_valid_bracket {
 		int len = s.length();
 		for (int i = 0; i < len; i++) {
 			char c = s.charAt(i);
-			if (c == '(' || c == '{' || c == '[') { // å·¦æ‹¬å·
+			if (c == '(' || c == '{' || c == '[') { // ×óÀ¨ºÅ
 				stack.push(c);
-			} else { // å³æ‹¬å·
+			} else { // ÓÒÀ¨ºÅ
 				if (stack.isEmpty()) return false;
 				
 				char left = stack.pop();

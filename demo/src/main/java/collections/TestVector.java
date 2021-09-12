@@ -40,8 +40,8 @@ public class TestVector {
     /**
      * change size with the setSize() method.
      * 
-     * å¦‚æœè®¾ç½®sizeå°äºå½“å‰çš„å…ƒç´ æ•°é‡ï¼Œåˆ™å…ƒç´ ä¼šä»å°¾éƒ¨å¼€å§‹è¢«ä¸¢æ‰ å¦‚æœè®¾ç½®sizeå¤§äºå½“å‰çš„å…ƒç´ æ•°é‡ï¼Œåˆ™ç”¨nullè¡¥å……
-     * setSize(0)åˆ™ç§»é™¤æ‰€æœ‰çš„å…ƒç´  sizeä¸º0æˆ–è€…æ²¡æœ‰å…ƒç´ ï¼Œåˆ™isEmptyä¸ºtrue
+     * Èç¹ûÉèÖÃsizeĞ¡ÓÚµ±Ç°µÄÔªËØÊıÁ¿£¬ÔòÔªËØ»á´ÓÎ²²¿¿ªÊ¼±»¶ªµô Èç¹ûÉèÖÃsize´óÓÚµ±Ç°µÄÔªËØÊıÁ¿£¬ÔòÓÃnull²¹³ä
+     * setSize(0)ÔòÒÆ³ıËùÓĞµÄÔªËØ sizeÎª0»òÕßÃ»ÓĞÔªËØ£¬ÔòisEmptyÎªtrue
      */
     @Test
     public void test2() {
@@ -59,7 +59,7 @@ public class TestVector {
         System.out.println(v); // [9, 8, 7, null, null, null, null, null, null,
                                // null]
 
-        // ä¿è¯ç©ºé—´è¾¾åˆ°40
+        // ±£Ö¤¿Õ¼ä´ïµ½40
         v.ensureCapacity(40);
         System.out.println(v.capacity());
     }

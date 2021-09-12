@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/collections/Main.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/collections/NavigableSetDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/collections/TestIterator.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/collections/TestQueue.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/collections/TestSet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/collections/TestSort.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/collections/TestTreeMap.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/collections/TestVector.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/collections/WeakIdentityHashMap.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/concurrency/CountDownLatchDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/concurrency/CyclicBarrierDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/concurrency/SemaphoreDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/concurrency/multithread/BankWaterService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/concurrency/multithread/HiddenIterator.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/concurrency/multithread/MonitorVehicleTracker.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/concurrency/multithread/OutputInSequenceDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/concurrency/multithread/TempClass.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/design/pattern/visitor_pattern/ToolApplication.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/design/pattern/visitor_pattern2/DemoMain.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/java8/chapter3/Chapter3Demo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/leetcode/primary/arrays/RemoveDuplicates.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/structure/leetcode/stack/_20_valid_bracket.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/kotlin/com/shengsiyuan/coroutines5/HelloFlow19.kt" charset="GBK" />
+  </component>
+</project>

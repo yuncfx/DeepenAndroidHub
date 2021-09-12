@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * @author shane
  *         <p>
- *         楂樺苟鍙戞儏鍐典笅锛屾�ц兘浣庝笅
+ *         高并发情况下，性能低下
  */
 public class MonitorVehicleTracker {
     private final Map<String, MutablePoint> locations;

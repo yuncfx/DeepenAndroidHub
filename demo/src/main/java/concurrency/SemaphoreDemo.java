@@ -11,7 +11,7 @@ import java.util.concurrent.*;
  * {@link Semaphore#release()} # release a permit
  * {@link Semaphore#release(int permits)} # release permits
  * 
- * semaphoreä¸€èˆ¬ç”¨äºéœ€è¦é™åˆ¶èµ„æºçš„ä½¿ç”¨çš„åœºæ™¯ã€‚
+ * semaphoreÒ»°ãÓÃÓÚĞèÒªÏŞÖÆ×ÊÔ´µÄÊ¹ÓÃµÄ³¡¾°¡£
  *
  */
 

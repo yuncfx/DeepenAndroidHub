@@ -13,15 +13,15 @@ import java.util.concurrent.Executors;
 
 public class BankWaterService implements Runnable {
     /**
-     * åˆ›å»º4ä¸ªå±éšœï¼Œå¤„ç†å®Œä¹‹åæ‰§è¡Œå½“å‰ç±»çš„runæ–¹æ³•
+     * ´´½¨4¸öÆÁÕÏ£¬´¦ÀíÍêÖ®ºóÖ´ĞĞµ±Ç°ÀàµÄrun·½·¨
      */
     private CyclicBarrier c = new CyclicBarrier(4, this);
     /**
-     * å‡è®¾åªæœ‰4ä¸ªsheetï¼Œæ‰€ä»¥åªå¯åŠ¨4ä¸ªçº¿ç¨‹
+     * ¼ÙÉèÖ»ÓĞ4¸ösheet£¬ËùÒÔÖ»Æô¶¯4¸öÏß³Ì
      */
     private ExecutorService executor = Executors.newFixedThreadPool(4);
     /**
-     * ä¿å­˜æ¯ä¸ªsheetè®¡ç®—å‡ºçš„é“¶æµç»“æœ
+     * ±£´æÃ¿¸ösheet¼ÆËã³öµÄÒøÁ÷½á¹û
      */
     private ConcurrentHashMap<String, Integer> sheetBankWaterCount = new
             ConcurrentHashMap<>();
@@ -29,10 +29,10 @@ public class BankWaterService implements Runnable {
     private void count() {
         for (int i = 0; i < 4; i++) {
             executor.execute(() -> {
-                // è®¡ç®—å½“å‰sheetçš„é“¶æµæ•°æ®ï¼Œè®¡ç®—ä»£ç çœç•¥
+                // ¼ÆËãµ±Ç°sheetµÄÒøÁ÷Êı¾İ£¬¼ÆËã´úÂëÊ¡ÂÔ
                 sheetBankWaterCount
                         .put(Thread.currentThread().getName(), 1);
-                // é“¶æµè®¡ç®—å®Œæˆï¼Œæ’å…¥ä¸€ä¸ªå±éšœ
+                // ÒøÁ÷¼ÆËãÍê³É£¬²åÈëÒ»¸öÆÁÕÏ
                 try {
                     c.await();
                 } catch (InterruptedException |
@@ -46,11 +46,11 @@ public class BankWaterService implements Runnable {
     @Override
     public void run() {
         int result = 0;
-        // æ±‡æ€»æ¯ä¸ªsheetè®¡ç®—å‡ºçš„ç»“æœ
+        // »ã×ÜÃ¿¸ösheet¼ÆËã³öµÄ½á¹û
         for (Map.Entry<String, Integer> sheet : sheetBankWaterCount.entrySet()) {
             result += sheet.getValue();
         }
-        // å°†ç»“æœè¾“å‡º
+        // ½«½á¹ûÊä³ö
         sheetBankWaterCount.put("result", result);
         System.out.println(result);
         executor.shutdown();

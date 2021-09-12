@@ -19,7 +19,7 @@ public class TestSort {
     public static void bubbleSort(int[] arr) {
         int count = 0;
         for (int x = 0; x < arr.length; x++) {
-            for (int y = 0; y < arr.length - x - 1; y++) { // -x，让每一次比较的元素减少，-1，避免角标越界
+            for (int y = 0; y < arr.length - x - 1; y++) { // -x����ÿһ�αȽϵ�Ԫ�ؼ��٣�-1������Ǳ�Խ��
                 if (arr[y] > arr[y + 1]) {
                     int temp = arr[y];
                     arr[y] = arr[y + 1];
@@ -32,10 +32,10 @@ public class TestSort {
     }
 
     /**
-     * bubbleSort2()的效率稍高于bubbleSort()方法, 莫非是因为bubbleSort每次要计算arr.length - x - 1
+     * bubbleSort2()��Ч���Ը���bubbleSort()����, Ī������ΪbubbleSortÿ��Ҫ����arr.length - x - 1
      * 
      * @param intArray
-     *            相邻的两个元素进行比较，如果符合条件，则换位，每次将最值放到最后(倒数第二、倒数第三依次类推)
+     *            ���ڵ�����Ԫ�ؽ��бȽϣ����������������λ��ÿ�ν���ֵ�ŵ����(�����ڶ�������������������)
      *
      */
     public static void bubbleSort2(int[] intArray) {
@@ -53,12 +53,12 @@ public class TestSort {
     }
 
     /**
-     * 选择排序
+     * ѡ������
      * 
      * @param intArray
-     *            第一次始终以0角标的元素和其它元素比较，将较小的存起来，循环直到最后，得到最小的数，放在0角标上；
-     *            第二次始终以1角标的元素和1角标以后的其它元素比较，将较小的存起来，循环直到最后，得到第二小的数，放在1角标上；
-     *            重复直到最后。
+     *            ��һ��ʼ����0�Ǳ��Ԫ�غ�����Ԫ�رȽϣ�����С�Ĵ�������ѭ��ֱ����󣬵õ���С����������0�Ǳ��ϣ�
+     *            �ڶ���ʼ����1�Ǳ��Ԫ�غ�1�Ǳ��Ժ������Ԫ�رȽϣ�����С�Ĵ�������ѭ��ֱ����󣬵õ��ڶ�С����������1�Ǳ��ϣ�
+     *            �ظ�ֱ�����
      */
     public static void selectionSort(int[] intArray) {
         for (int out = 0; out < intArray.length - 1; out++) {
@@ -72,9 +72,9 @@ public class TestSort {
     }
 
     /**
-     * 插入排序就是把当前待排序的元素插入到一个已经排好序的列表里面
-     * 从数组的第二个元素开始，取得当前待处理的元素，插入到当前元素之前的子数组里面，直到数组的末尾。
-     * 插入排序的最坏运行时间是O(n2)，所以并不是最优的排序算法，特点是简单，不需要额外的存储空间，在元素少的时候工作得好。
+     * ����������ǰѵ�ǰ�������Ԫ�ز��뵽һ���Ѿ��ź�����б�����
+     * ������ĵڶ���Ԫ�ؿ�ʼ��ȡ�õ�ǰ��������Ԫ�أ����뵽��ǰԪ��֮ǰ�����������棬ֱ�������ĩβ��
+     * ��������������ʱ����O(n2)�����Բ��������ŵ������㷨���ص��Ǽ򵥣�����Ҫ����Ĵ洢�ռ䣬��Ԫ���ٵ�ʱ�����úá�
      * 
      * @param intArray
      */
@@ -84,20 +84,20 @@ public class TestSort {
         for (out = 1; out < intArray.length; out++) {
             int temp = intArray[out];
             in = out;
-            // 循环判断之前的一个元素是不是比temp大
+            // ѭ���ж�֮ǰ��һ��Ԫ���ǲ��Ǳ�temp��
             while (in > 0 && intArray[in - 1] >= temp) {
                 intArray[in] = intArray[in - 1];
                 --in;
             }
-            // 把temp值放在最后确定的in的位置
+            // ��tempֵ�������ȷ����in��λ��
             intArray[in] = temp;
         }
     }
 
     /**
-     * 希尔排序也是插入排序的一种，优化算法
-     * 基本思想：算法先将要排序的一组数按某个增量d（n/2,n为要排序数的个数）分成若干组，每组中记录的下标相差d.对每组中全部元素进行直接插入排序，
-     * 然后再用一个较小的增量（d/2）对它进行分组，在每组中再进行直接插入排序。当增量减到1时，进行直接插入排序后，排序完成。
+     * ϣ������Ҳ�ǲ��������һ�֣��Ż��㷨
+     * ����˼�룺�㷨�Ƚ�Ҫ�����һ������ĳ������d��n/2,nΪҪ�������ĸ������ֳ������飬ÿ���м�¼���±����d.��ÿ����ȫ��Ԫ�ؽ���ֱ�Ӳ�������
+     * Ȼ������һ����С��������d/2���������з��飬��ÿ�����ٽ���ֱ�Ӳ������򡣵���������1ʱ������ֱ�Ӳ��������������ɡ�
      * 
      * @param intArray
      */
@@ -105,22 +105,22 @@ public class TestSort {
         int inner, outer;
         int temp;
 
-        int h = 1; // h 是增量，换成别的值一样OK的
+        int h = 1; // h �����������ɱ��ֵһ��OK��
         while (h <= intArray.length / 3) {
             h = h * 3 + 1;
             System.out.println(h);
         }
         while (h > 0) {
-            // outer从h开始递增，
+            // outer��h��ʼ������
             for (outer = h; outer < intArray.length; outer++) {
                 temp = intArray[outer];
                 inner = outer;
 
                 /**
-                 * inner 必须大于等于h
+                 * inner ������ڵ���h
                  * 
-                 * 如果intArray[inner - h] >= 当前的temp， 则将intArray[inner -
-                 * h]的值赋给intArray[inner]， 并将inner - h
+                 * ���intArray[inner - h] >= ��ǰ��temp�� ��intArray[inner -
+                 * h]��ֵ����intArray[inner]�� ����inner - h
                  */
                 while (inner > h - 1 && intArray[inner - h] >= temp) {
                     intArray[inner] = intArray[inner - h];
@@ -134,10 +134,10 @@ public class TestSort {
     }
 
     /**
-     * //快速排序: 不稳定，时间复杂度 最理想 O(nlogn) 最差时间O(n^2)
-     * 是C.R.A.Hoare于1962年提出的一种划分交换排序。它采用了一种分治的策略，通常称其为分治法(Divide-and-
-     * ConquerMethod)。 该方法的基本思想是： 1．先从数列中取出一个数作为基准数。
-     * 2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。 3．再对左右区间重复第二步，直到各区间只有一个数
+     * //��������: ���ȶ���ʱ�临�Ӷ� ������ O(nlogn) ���ʱ��O(n^2)
+     * ��C.R.A.Hoare��1962�������һ�ֻ��ֽ���������������һ�ַ��εĲ��ԣ�ͨ������Ϊ���η�(Divide-and-
+     * ConquerMethod)�� �÷����Ļ���˼���ǣ� 1���ȴ�������ȡ��һ������Ϊ��׼����
+     * 2���������̣���������������ȫ�ŵ������ұߣ�С�ڻ����������ȫ�ŵ�������ߡ� 3���ٶ����������ظ��ڶ�����ֱ��������ֻ��һ����
      * 
      * @param intArray
      */

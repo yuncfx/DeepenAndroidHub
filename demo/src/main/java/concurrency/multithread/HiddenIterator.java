@@ -25,8 +25,8 @@ public class HiddenIterator {
             add(r.nextInt());
         }
 
-        //ç¼–è¯‘å™¨å°†å­—ç¬¦ä¸²çš„è¿æ¥æ“ä½œè½¬æ¢ä¸ºè°ƒç”¨StringBuilder.append(Object)ï¼Œè€Œè¿™ä¸ªæ–¹æ³•åˆä¼šè°ƒç”¨å®¹å™¨çš„toStringæ–¹æ³•ï¼Œ
-        // æ ‡å‡†å®¹å™¨çš„toStringæ–¹æ³•å°†è¿­ä»£å®¹å™¨ï¼Œå¹¶åœ¨æ¯ä¸ªå…ƒç´ ä¸Šè°ƒç”¨toStringæ¥ç”Ÿæˆå®¹å™¨å†…å®¹çš„æ ¼å¼åŒ–è¡¨ç¤ºã€‚
+        //±àÒëÆ÷½«×Ö·û´®µÄÁ¬½Ó²Ù×÷×ª»»Îªµ÷ÓÃStringBuilder.append(Object)£¬¶øÕâ¸ö·½·¨ÓÖ»áµ÷ÓÃÈİÆ÷µÄtoString·½·¨£¬
+        // ±ê×¼ÈİÆ÷µÄtoString·½·¨½«µü´úÈİÆ÷£¬²¢ÔÚÃ¿¸öÔªËØÉÏµ÷ÓÃtoStringÀ´Éú³ÉÈİÆ÷ÄÚÈİµÄ¸ñÊ½»¯±íÊ¾¡£
         System.out.println(" DEBUG: added ten elements to " + set);
     }
 }

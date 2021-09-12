@@ -26,7 +26,7 @@ public class WeakIdentityHashMap<K, V> implements Map<K, V> {
      * Reference queues, to which registered reference objects are appended by
      * the garbage collector after the appropriate reachability changes are
      * detected. 
-     * ä¸­æ–‡JavaDocçš„æè¿°ï¼šå¼•ç”¨é˜Ÿåˆ—ï¼Œåœ¨æ£€æµ‹åˆ°é€‚å½“çš„å¯åˆ°è¾¾æ€§æ›´æ”¹åï¼Œåƒåœ¾å›æ”¶å™¨å°†å·²æ³¨å†Œçš„å¼•ç”¨å¯¹è±¡æ·»åŠ åˆ°è¯¥é˜Ÿåˆ—ä¸­
+     * ÖĞÎÄJavaDocµÄÃèÊö£ºÒıÓÃ¶ÓÁĞ£¬ÔÚ¼ì²âµ½ÊÊµ±µÄ¿Éµ½´ïĞÔ¸ü¸Äºó£¬À¬»ø»ØÊÕÆ÷½«ÒÑ×¢²áµÄÒıÓÃ¶ÔÏóÌí¼Óµ½¸Ã¶ÓÁĞÖĞ
      */
     private final ReferenceQueue<K> queue = new ReferenceQueue<K>();
     private Map<IdentityWeakReference, V> backingStore = new HashMap<IdentityWeakReference, V>();
@@ -126,9 +126,9 @@ public class WeakIdentityHashMap<K, V> implements Map<K, V> {
     }
 
     /**
-     * WeakHashMapçš„å®ç°ä¹Ÿæ˜¯é€šè¿‡ReferenceQueueè¿™ä¸ªâ€œç›‘å¬å™¨â€æ¥ä¼˜é›…çš„å®ç°è‡ªåŠ¨åˆ é™¤é‚£äº›å¼•ç”¨ä¸å¯è¾¾çš„keyçš„
+     * WeakHashMapµÄÊµÏÖÒ²ÊÇÍ¨¹ıReferenceQueueÕâ¸ö¡°¼àÌıÆ÷¡±À´ÓÅÑÅµÄÊµÏÖ×Ô¶¯É¾³ıÄÇĞ©ÒıÓÃ²»¿É´ïµÄkeyµÄ
      * 
-     * è¿™ä¸ªæ–¹æ³•å°±æ˜¯æ¯æ¬¡è¦éå†queueé˜Ÿåˆ—ï¼Œå¦‚æœqueueé˜Ÿåˆ—ä¸ä¸ºç©ºï¼Œåˆ™åˆ é™¤æ‰backingStoreé‡Œé¢çš„å¯¹åº”çš„å…ƒç´ ï¼Œå› ä¸ºè¯¥å…ƒç´ å·²ç»ä¸å¯è¾¾
+     * Õâ¸ö·½·¨¾ÍÊÇÃ¿´ÎÒª±éÀúqueue¶ÓÁĞ£¬Èç¹ûqueue¶ÓÁĞ²»Îª¿Õ£¬ÔòÉ¾³ıµôbackingStoreÀïÃæµÄ¶ÔÓ¦µÄÔªËØ£¬ÒòÎª¸ÃÔªËØÒÑ¾­²»¿É´ï
      */
     private synchronized void reap() {
         Object zombie = queue.poll();

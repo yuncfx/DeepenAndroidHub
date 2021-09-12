@@ -7,8 +7,8 @@ public class Main {
         // String[][] data = new String[3][4];
         // System.out.println(getDimension(data));
         long[] a = add(null, 1);
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
+        for (long l : a) {
+            System.out.print(l + " ");
         }
     }
 
@@ -24,13 +24,13 @@ public class Main {
     }
 
     /**
-     * copyä¼ å…¥çš„arrayï¼Œå¹¶è¿”å›žä¸€ä¸ªæ–°array2ï¼Œarray2æ¯”arrayå¤šä¸€ä¸ªelementåœ¨å°¾éƒ¨ã€‚
-     * 
+     * copy´«ÈëµÄarray£¬²¢·µ»ØÒ»¸öÐÂarray2£¬array2±Èarray¶àÒ»¸öelementÔÚÎ²²¿¡£
+     *
      * @param array
-     *            éœ€è¦æ“ä½œçš„æ•°ç»„ï¼Œå¯èƒ½ä¸ºnull
+     *            ÐèÒª²Ù×÷µÄÊý×é£¬¿ÉÄÜÎªnull
      * @param element
-     *            æ·»åŠ çš„å…ƒç´ 
-     * @return æ–°æ•°ç»„
+     *            Ìí¼ÓµÄÔªËØ
+     * @return ÐÂÊý×é
      */
     public static long[] add(long[] array, long element) {
         long[] newArray = (long[]) copyArrayGrow1(array, Long.TYPE);
@@ -41,7 +41,7 @@ public class Main {
     /**
      * Returns a copy of the given array of size 1 greater than the argument.
      * The last value of the array is left to the default value.
-     * 
+     *
      * @param array
      *            The array to copy, must not be <code>null</code>.
      * @param newArrayComponentType

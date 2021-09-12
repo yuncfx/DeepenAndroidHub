@@ -6,8 +6,8 @@ import java.util.concurrent.*;
  * 
  * @author Shane
  * 
- *         CountDownLatchæ˜¯ä¸€ä¸ªåŒæ­¥å·¥å…·ç±»ï¼Œå®ƒå…è®¸ä¸€ä¸ªæˆ–å¤šä¸ªçº¿ç¨‹ä¸€ç›´ç­‰å¾…ï¼Œç›´åˆ°å…¶ä»–çº¿ç¨‹çš„æ“ä½œæ‰§è¡Œå®Œåå†æ‰§è¡Œï¼Œè§’è‰²åˆ†ä¸ºç­‰å¾…çº¿ç¨‹å’Œè¢«ç­‰å¾…çº¿ç¨‹ã€‚
- *         ä¸€æ¬¡æ€§ä½¿ç”¨ã€‚
+ *         CountDownLatchÊÇÒ»¸öÍ¬²½¹¤¾ßÀà£¬ËüÔÊĞíÒ»¸ö»ò¶à¸öÏß³ÌÒ»Ö±µÈ´ı£¬Ö±µ½ÆäËûÏß³ÌµÄ²Ù×÷Ö´ĞĞÍêºóÔÙÖ´ĞĞ£¬½ÇÉ«·ÖÎªµÈ´ıÏß³ÌºÍ±»µÈ´ıÏß³Ì¡£
+ *         Ò»´ÎĞÔÊ¹ÓÃ¡£
  *         
  *         {@link CountDownLatch#getCount()} // return value changes when countDown was called 
  *         {@link CountDownLatch#await}  // wait to be scheduled until the count is set to zero or interrupted

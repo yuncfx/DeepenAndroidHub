@@ -1308,7 +1308,7 @@ public class PuzzlerTest {
      * 不要这样使用！
      */
     public static void sneakyThrow(Throwable t) {
-        Thread.currentThread().stop(t);
+        Thread.currentThread().stop();
     }
 
     /**
@@ -2055,10 +2055,6 @@ public class PuzzlerTest {
 
     /**
      * @see PrintWords
-     * @see test.shane.puzzler.another.Words
-     * @see test.shane.puzzler.another.Words2
-     * @see test.shane.puzzler.another.Words3
-     * @see test.shane.puzzler.another.Words4
      * <p>
      * 先编译并运行PrintWords，然后再将Words改成Words2里的内容（类名不变），观察结果。
      * 然后再将Words3改成Words4里的内容（类名不变），观察结果。
