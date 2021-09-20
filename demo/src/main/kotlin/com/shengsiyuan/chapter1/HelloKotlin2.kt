@@ -1,8 +1,8 @@
 package com.shengsiyuan.chapter1
 
-import com.shengsiyuan.chapter1.cal.multiply
+import com.shengsiyuan.chapter1.multiply
 
-import com.shengsiyuan.chapter1.cal.multiply as myMultiply
+import com.shengsiyuan.chapter1.multiply as myMultiply
 
 fun main(args: Array<String>) {
     val a: Int = 1

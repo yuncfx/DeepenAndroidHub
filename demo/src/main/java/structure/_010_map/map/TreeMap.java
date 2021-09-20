@@ -37,18 +37,18 @@ public class TreeMap<K, V> implements Map<K, V> {
 	public V put(K key, V value) {
 		keyNotNullCheck(key);
 		
-		// æ·»åŠ ç¬¬ä¸€ä¸ªèŠ‚ç‚¹
+		// Ìí¼ÓµÚÒ»¸ö½Úµã
 		if (root == null) {
 			root = new Node<>(key, value, null);
 			size++;
 
-			// æ–°æ·»åŠ èŠ‚ç‚¹ä¹‹åçš„å¤„ç†
+			// ĞÂÌí¼Ó½ÚµãÖ®ºóµÄ´¦Àí
 			afterPut(root);
 			return null;
 		}
 		
-		// æ·»åŠ çš„ä¸æ˜¯ç¬¬ä¸€ä¸ªèŠ‚ç‚¹
-		// æ‰¾åˆ°çˆ¶èŠ‚ç‚¹
+		// Ìí¼ÓµÄ²»ÊÇµÚÒ»¸ö½Úµã
+		// ÕÒµ½¸¸½Úµã
 		Node<K, V> parent = root;
 		Node<K, V> node = root;
 		int cmp = 0;
@@ -59,7 +59,7 @@ public class TreeMap<K, V> implements Map<K, V> {
 				node = node.right;
 			} else if (cmp < 0) {
 				node = node.left;
-			} else { // ç›¸ç­‰
+			} else { // ÏàµÈ
 				node.key = key;
 				V oldValue = node.value;
 				node.value = value;
@@ -67,7 +67,7 @@ public class TreeMap<K, V> implements Map<K, V> {
 			}
 		} while (node != null);
 
-		// çœ‹çœ‹æ’å…¥åˆ°çˆ¶èŠ‚ç‚¹çš„å“ªä¸ªä½ç½®
+		// ¿´¿´²åÈëµ½¸¸½ÚµãµÄÄÄ¸öÎ»ÖÃ
 		Node<K, V> newNode = new Node<>(key, value, parent);
 		if (cmp > 0) {
 			parent.right = newNode;
@@ -76,7 +76,7 @@ public class TreeMap<K, V> implements Map<K, V> {
 		}
 		size++;
 		
-		// æ–°æ·»åŠ èŠ‚ç‚¹ä¹‹åçš„å¤„ç†
+		// ĞÂÌí¼Ó½ÚµãÖ®ºóµÄ´¦Àí
 		afterPut(newNode);
 		return null;
 	}
@@ -146,24 +146,24 @@ public class TreeMap<K, V> implements Map<K, V> {
 		
 		V oldValue = node.value;
 		
-		if (node.hasTwoChildren()) { // åº¦ä¸º2çš„èŠ‚ç‚¹
-			// æ‰¾åˆ°åç»§èŠ‚ç‚¹
+		if (node.hasTwoChildren()) { // ¶ÈÎª2µÄ½Úµã
+			// ÕÒµ½ºó¼Ì½Úµã
 			Node<K, V> s = successor(node);
-			// ç”¨åç»§èŠ‚ç‚¹çš„å€¼è¦†ç›–åº¦ä¸º2çš„èŠ‚ç‚¹çš„å€¼
+			// ÓÃºó¼Ì½ÚµãµÄÖµ¸²¸Ç¶ÈÎª2µÄ½ÚµãµÄÖµ
 			node.key = s.key;
 			node.value = s.value;
-			// åˆ é™¤åç»§èŠ‚ç‚¹
+			// É¾³ıºó¼Ì½Úµã
 			node = s;
 		}
 		
-		// åˆ é™¤nodeèŠ‚ç‚¹ï¼ˆnodeçš„åº¦å¿…ç„¶æ˜¯1æˆ–è€…0ï¼‰
+		// É¾³ınode½Úµã£¨nodeµÄ¶È±ØÈ»ÊÇ1»òÕß0£©
 		Node<K, V> replacement = node.left != null ? node.left : node.right;
 		
-		if (replacement != null) { // nodeæ˜¯åº¦ä¸º1çš„èŠ‚ç‚¹
-			// æ›´æ”¹parent
+		if (replacement != null) { // nodeÊÇ¶ÈÎª1µÄ½Úµã
+			// ¸ü¸Äparent
 			replacement.parent = node.parent;
-			// æ›´æ”¹parentçš„leftã€rightçš„æŒ‡å‘
-			if (node.parent == null) { // nodeæ˜¯åº¦ä¸º1çš„èŠ‚ç‚¹å¹¶ä¸”æ˜¯æ ¹èŠ‚ç‚¹
+			// ¸ü¸ÄparentµÄleft¡¢rightµÄÖ¸Ïò
+			if (node.parent == null) { // nodeÊÇ¶ÈÎª1µÄ½Úµã²¢ÇÒÊÇ¸ù½Úµã
 				root = replacement;
 			} else if (node == node.parent.left) {
 				node.parent.left = replacement;
@@ -171,18 +171,18 @@ public class TreeMap<K, V> implements Map<K, V> {
 				node.parent.right = replacement;
 			}
 			
-			// åˆ é™¤èŠ‚ç‚¹ä¹‹åçš„å¤„ç†
+			// É¾³ı½ÚµãÖ®ºóµÄ´¦Àí
 			afterRemove(replacement);
-		} else if (node.parent == null) { // nodeæ˜¯å¶å­èŠ‚ç‚¹å¹¶ä¸”æ˜¯æ ¹èŠ‚ç‚¹
+		} else if (node.parent == null) { // nodeÊÇÒ¶×Ó½Úµã²¢ÇÒÊÇ¸ù½Úµã
 			root = null;
-		} else { // nodeæ˜¯å¶å­èŠ‚ç‚¹ï¼Œä½†ä¸æ˜¯æ ¹èŠ‚ç‚¹
+		} else { // nodeÊÇÒ¶×Ó½Úµã£¬µ«²»ÊÇ¸ù½Úµã
 			if (node == node.parent.left) {
 				node.parent.left = null;
 			} else { // node == node.parent.right
 				node.parent.right = null;
 			}
 			
-			// åˆ é™¤èŠ‚ç‚¹ä¹‹åçš„å¤„ç†
+			// É¾³ı½ÚµãÖ®ºóµÄ´¦Àí
 			afterRemove(node);
 		}
 		
@@ -190,8 +190,8 @@ public class TreeMap<K, V> implements Map<K, V> {
 	}
 	
 	private void afterRemove(Node<K, V> node) {
-		// å¦‚æœåˆ é™¤çš„èŠ‚ç‚¹æ˜¯çº¢è‰²
-		// æˆ–è€… ç”¨ä»¥å–ä»£åˆ é™¤èŠ‚ç‚¹çš„å­èŠ‚ç‚¹æ˜¯çº¢è‰²
+		// Èç¹ûÉ¾³ıµÄ½ÚµãÊÇºìÉ«
+		// »òÕß ÓÃÒÔÈ¡´úÉ¾³ı½ÚµãµÄ×Ó½ÚµãÊÇºìÉ«
 		if (isRed(node)) {
 			black(node);
 			return;
@@ -200,30 +200,30 @@ public class TreeMap<K, V> implements Map<K, V> {
 		Node<K, V> parent = node.parent;
 		if (parent == null) return;
 		
-		// åˆ é™¤çš„æ˜¯é»‘è‰²å¶å­èŠ‚ç‚¹ã€ä¸‹æº¢ã€‘
-		// åˆ¤æ–­è¢«åˆ é™¤çš„nodeæ˜¯å·¦è¿˜æ˜¯å³
+		// É¾³ıµÄÊÇºÚÉ«Ò¶×Ó½Úµã¡¾ÏÂÒç¡¿
+		// ÅĞ¶Ï±»É¾³ıµÄnodeÊÇ×ó»¹ÊÇÓÒ
 		boolean left = parent.left == null || node.isLeftChild();
 		Node<K, V> sibling = left ? parent.right : parent.left;
-		if (left) { // è¢«åˆ é™¤çš„èŠ‚ç‚¹åœ¨å·¦è¾¹ï¼Œå…„å¼ŸèŠ‚ç‚¹åœ¨å³è¾¹
-			if (isRed(sibling)) { // å…„å¼ŸèŠ‚ç‚¹æ˜¯çº¢è‰²
+		if (left) { // ±»É¾³ıµÄ½ÚµãÔÚ×ó±ß£¬ĞÖµÜ½ÚµãÔÚÓÒ±ß
+			if (isRed(sibling)) { // ĞÖµÜ½ÚµãÊÇºìÉ«
 				black(sibling);
 				red(parent);
 				rotateLeft(parent);
-				// æ›´æ¢å…„å¼Ÿ
+				// ¸ü»»ĞÖµÜ
 				sibling = parent.right;
 			}
 			
-			// å…„å¼ŸèŠ‚ç‚¹å¿…ç„¶æ˜¯é»‘è‰²
+			// ĞÖµÜ½Úµã±ØÈ»ÊÇºÚÉ«
 			if (isBlack(sibling.left) && isBlack(sibling.right)) {
-				// å…„å¼ŸèŠ‚ç‚¹æ²¡æœ‰1ä¸ªçº¢è‰²å­èŠ‚ç‚¹ï¼Œçˆ¶èŠ‚ç‚¹è¦å‘ä¸‹è·Ÿå…„å¼ŸèŠ‚ç‚¹åˆå¹¶
+				// ĞÖµÜ½ÚµãÃ»ÓĞ1¸öºìÉ«×Ó½Úµã£¬¸¸½ÚµãÒªÏòÏÂ¸úĞÖµÜ½ÚµãºÏ²¢
 				boolean parentBlack = isBlack(parent);
 				black(parent);
 				red(sibling);
 				if (parentBlack) {
 					afterRemove(parent);
 				}
-			} else { // å…„å¼ŸèŠ‚ç‚¹è‡³å°‘æœ‰1ä¸ªçº¢è‰²å­èŠ‚ç‚¹ï¼Œå‘å…„å¼ŸèŠ‚ç‚¹å€Ÿå…ƒç´ 
-				// å…„å¼ŸèŠ‚ç‚¹çš„å·¦è¾¹æ˜¯é»‘è‰²ï¼Œå…„å¼Ÿè¦å…ˆæ—‹è½¬
+			} else { // ĞÖµÜ½ÚµãÖÁÉÙÓĞ1¸öºìÉ«×Ó½Úµã£¬ÏòĞÖµÜ½Úµã½èÔªËØ
+				// ĞÖµÜ½ÚµãµÄ×ó±ßÊÇºÚÉ«£¬ĞÖµÜÒªÏÈĞı×ª
 				if (isBlack(sibling.right)) {
 					rotateRight(sibling);
 					sibling = parent.right;
@@ -234,26 +234,26 @@ public class TreeMap<K, V> implements Map<K, V> {
 				black(parent);
 				rotateLeft(parent);
 			}
-		} else { // è¢«åˆ é™¤çš„èŠ‚ç‚¹åœ¨å³è¾¹ï¼Œå…„å¼ŸèŠ‚ç‚¹åœ¨å·¦è¾¹
-			if (isRed(sibling)) { // å…„å¼ŸèŠ‚ç‚¹æ˜¯çº¢è‰²
+		} else { // ±»É¾³ıµÄ½ÚµãÔÚÓÒ±ß£¬ĞÖµÜ½ÚµãÔÚ×ó±ß
+			if (isRed(sibling)) { // ĞÖµÜ½ÚµãÊÇºìÉ«
 				black(sibling);
 				red(parent);
 				rotateRight(parent);
-				// æ›´æ¢å…„å¼Ÿ
+				// ¸ü»»ĞÖµÜ
 				sibling = parent.left;
 			}
 			
-			// å…„å¼ŸèŠ‚ç‚¹å¿…ç„¶æ˜¯é»‘è‰²
+			// ĞÖµÜ½Úµã±ØÈ»ÊÇºÚÉ«
 			if (isBlack(sibling.left) && isBlack(sibling.right)) {
-				// å…„å¼ŸèŠ‚ç‚¹æ²¡æœ‰1ä¸ªçº¢è‰²å­èŠ‚ç‚¹ï¼Œçˆ¶èŠ‚ç‚¹è¦å‘ä¸‹è·Ÿå…„å¼ŸèŠ‚ç‚¹åˆå¹¶
+				// ĞÖµÜ½ÚµãÃ»ÓĞ1¸öºìÉ«×Ó½Úµã£¬¸¸½ÚµãÒªÏòÏÂ¸úĞÖµÜ½ÚµãºÏ²¢
 				boolean parentBlack = isBlack(parent);
 				black(parent);
 				red(sibling);
 				if (parentBlack) {
 					afterRemove(parent);
 				}
-			} else { // å…„å¼ŸèŠ‚ç‚¹è‡³å°‘æœ‰1ä¸ªçº¢è‰²å­èŠ‚ç‚¹ï¼Œå‘å…„å¼ŸèŠ‚ç‚¹å€Ÿå…ƒç´ 
-				// å…„å¼ŸèŠ‚ç‚¹çš„å·¦è¾¹æ˜¯é»‘è‰²ï¼Œå…„å¼Ÿè¦å…ˆæ—‹è½¬
+			} else { // ĞÖµÜ½ÚµãÖÁÉÙÓĞ1¸öºìÉ«×Ó½Úµã£¬ÏòĞÖµÜ½Úµã½èÔªËØ
+				// ĞÖµÜ½ÚµãµÄ×ó±ßÊÇºÚÉ«£¬ĞÖµÜÒªÏÈĞı×ª
 				if (isBlack(sibling.left)) {
 					rotateLeft(sibling);
 					sibling = parent.left;
@@ -270,7 +270,7 @@ public class TreeMap<K, V> implements Map<K, V> {
 	private Node<K, V> predecessor(Node<K, V> node) {
 		if (node == null) return null;
 		
-		// å‰é©±èŠ‚ç‚¹åœ¨å·¦å­æ ‘å½“ä¸­ï¼ˆleft.right.right.right....ï¼‰
+		// Ç°Çı½ÚµãÔÚ×ó×ÓÊ÷µ±ÖĞ£¨left.right.right.right....£©
 		Node<K, V> p = node.left;
 		if (p != null) {
 			while (p.right != null) {
@@ -279,7 +279,7 @@ public class TreeMap<K, V> implements Map<K, V> {
 			return p;
 		}
 		
-		// ä»çˆ¶èŠ‚ç‚¹ã€ç¥–çˆ¶èŠ‚ç‚¹ä¸­å¯»æ‰¾å‰é©±èŠ‚ç‚¹
+		// ´Ó¸¸½Úµã¡¢×æ¸¸½ÚµãÖĞÑ°ÕÒÇ°Çı½Úµã
 		while (node.parent != null && node == node.parent.left) {
 			node = node.parent;
 		}
@@ -292,7 +292,7 @@ public class TreeMap<K, V> implements Map<K, V> {
 	private Node<K, V> successor(Node<K, V> node) {
 		if (node == null) return null;
 		
-		// å‰é©±èŠ‚ç‚¹åœ¨å·¦å­æ ‘å½“ä¸­ï¼ˆright.left.left.left....ï¼‰
+		// Ç°Çı½ÚµãÔÚ×ó×ÓÊ÷µ±ÖĞ£¨right.left.left.left....£©
 		Node<K, V> p = node.right;
 		if (p != null) {
 			while (p.left != null) {
@@ -301,7 +301,7 @@ public class TreeMap<K, V> implements Map<K, V> {
 			return p;
 		}
 		
-		// ä»çˆ¶èŠ‚ç‚¹ã€ç¥–çˆ¶èŠ‚ç‚¹ä¸­å¯»æ‰¾å‰é©±èŠ‚ç‚¹
+		// ´Ó¸¸½Úµã¡¢×æ¸¸½ÚµãÖĞÑ°ÕÒÇ°Çı½Úµã
 		while (node.parent != null && node == node.parent.right) {
 			node = node.parent;
 		}
@@ -326,28 +326,28 @@ public class TreeMap<K, V> implements Map<K, V> {
 	private void afterPut(Node<K, V> node) {
 		Node<K, V> parent = node.parent;
 		
-		// æ·»åŠ çš„æ˜¯æ ¹èŠ‚ç‚¹ æˆ–è€… ä¸Šæº¢åˆ°è¾¾äº†æ ¹èŠ‚ç‚¹
+		// Ìí¼ÓµÄÊÇ¸ù½Úµã »òÕß ÉÏÒçµ½´ïÁË¸ù½Úµã
 		if (parent == null) {
 			black(node);
 			return;
 		}
 		
-		// å¦‚æœçˆ¶èŠ‚ç‚¹æ˜¯é»‘è‰²ï¼Œç›´æ¥è¿”å›
+		// Èç¹û¸¸½ÚµãÊÇºÚÉ«£¬Ö±½Ó·µ»Ø
 		if (isBlack(parent)) return;
 		
-		// å”çˆ¶èŠ‚ç‚¹
+		// Êå¸¸½Úµã
 		Node<K, V> uncle = parent.sibling();
-		// ç¥–çˆ¶èŠ‚ç‚¹
+		// ×æ¸¸½Úµã
 		Node<K, V> grand = red(parent.parent);
-		if (isRed(uncle)) { // å”çˆ¶èŠ‚ç‚¹æ˜¯çº¢è‰²ã€Bæ ‘èŠ‚ç‚¹ä¸Šæº¢ã€‘
+		if (isRed(uncle)) { // Êå¸¸½ÚµãÊÇºìÉ«¡¾BÊ÷½ÚµãÉÏÒç¡¿
 			black(parent);
 			black(uncle);
-			// æŠŠç¥–çˆ¶èŠ‚ç‚¹å½“åšæ˜¯æ–°æ·»åŠ çš„èŠ‚ç‚¹
+			// °Ñ×æ¸¸½Úµãµ±×öÊÇĞÂÌí¼ÓµÄ½Úµã
 			afterPut(grand);
 			return;
 		}
 		
-		// å”çˆ¶èŠ‚ç‚¹ä¸æ˜¯çº¢è‰²
+		// Êå¸¸½Úµã²»ÊÇºìÉ«
 		if (parent.isLeftChild()) { // L
 			if (node.isLeftChild()) { // LL
 				black(parent);
@@ -384,22 +384,22 @@ public class TreeMap<K, V> implements Map<K, V> {
 	}
 	
 	private void afterRotate(Node<K, V> grand, Node<K, V> parent, Node<K, V> child) {
-		// è®©parentç§°ä¸ºå­æ ‘çš„æ ¹èŠ‚ç‚¹
+		// ÈÃparent³ÆÎª×ÓÊ÷µÄ¸ù½Úµã
 		parent.parent = grand.parent;
 		if (grand.isLeftChild()) {
 			grand.parent.left = parent;
 		} else if (grand.isRightChild()) {
 			grand.parent.right = parent;
-		} else { // grandæ˜¯rootèŠ‚ç‚¹
+		} else { // grandÊÇroot½Úµã
 			root = parent;
 		}
 		
-		// æ›´æ–°childçš„parent
+		// ¸üĞÂchildµÄparent
 		if (child != null) {
 			child.parent = grand;
 		}
 		
-		// æ›´æ–°grandçš„parent
+		// ¸üĞÂgrandµÄparent
 		grand.parent = parent;
 	}
 
