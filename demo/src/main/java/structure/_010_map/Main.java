@@ -30,10 +30,10 @@ public class Main {
 		FileInfo fileInfo = Files.read("F:\\CoderMJLee\\DSA_Course\\课堂代码\\09-集合\\src",
 				new String[]{"java"});
 		
-		System.out.println("文件数量：" + fileInfo.getFiles());
-		System.out.println("代码行数：" + fileInfo.getLines());
+		System.out.println("文件数量:" + fileInfo.getFiles());
+		System.out.println("代码行数:" + fileInfo.getLines());
 		String[] words = fileInfo.words();
-		System.out.println("单词数量：" + words.length);
+		System.out.println("单词数量:" + words.length);
 		
 		Map<String, Integer> map = new TreeMap<>();
 		for (int i = 0; i < words.length; i++) {
