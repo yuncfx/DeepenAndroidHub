@@ -1,4 +1,4 @@
-package com.shengsiyuan.chapter2.oo
+package com.shengsiyuan.chapter2.oo1
 
 open class BaseClass {
     open fun method() {

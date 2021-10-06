@@ -1,4 +1,4 @@
-package com.shengsiyuan.chapter2.oo
+package com.shengsiyuan.chapter2.oo1
 
 // 伴生对象也可以支持扩展
 class CompanionObjectExtension {

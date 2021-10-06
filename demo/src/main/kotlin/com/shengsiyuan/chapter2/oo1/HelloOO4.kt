@@ -1,4 +1,4 @@
-package com.shengsiyuan.chapter2.oo
+package com.shengsiyuan.chapter2.oo1
 
 // 在Kotlin中， 所有类在默认情况下都是无法被继承的， 所有类默认都是final的。
 // open的含义与final相反

@@ -1,4 +1,4 @@
-package com.shengsiyuan.chapter2.oo
+package com.shengsiyuan.chapter2.oo1
 
 // 可见性 visibility
 // Kotlin提供了四种可见性修饰符：private, protected, internal, public

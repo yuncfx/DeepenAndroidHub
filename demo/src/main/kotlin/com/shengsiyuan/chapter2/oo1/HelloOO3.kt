@@ -1,4 +1,4 @@
-package com.shengsiyuan.chapter2.oo
+package com.shengsiyuan.chapter2.oo1
 
 class Student(private val userName: String, private val age: Int, private var address: String) {
     fun printInfo() {
