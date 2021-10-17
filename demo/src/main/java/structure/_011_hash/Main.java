@@ -41,8 +41,8 @@ public class Main {
 		FileInfo fileInfo = Files.read(filepath, null);
 		String[] words = fileInfo.words();
 
-		System.out.println("总行数:" + fileInfo.getLines());
-		System.out.println("单词总数:" + words.length);
+		System.out.println("total_lines:" + fileInfo.getLines());
+		System.out.println("words_count:" + words.length);
 		System.out.println("-------------------------------------");
 
 		test1Map(new TreeMap<>(), words);
