@@ -1,6 +1,7 @@
 package com.shengsiyuan.chapter5
 
 /*
+  P30
   闭包
   kotlin中lambda可以修改外部的变量， 不需要为final
  */
