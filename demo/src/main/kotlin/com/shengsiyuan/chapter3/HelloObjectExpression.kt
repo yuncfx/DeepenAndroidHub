@@ -1,8 +1,5 @@
 package com.shengsiyuan.chapter3
 
-import coroutines.somethingUsefulOneAsync
-import java.net.http.WebSocket
-
 // 对象表达式 object expression
 /* P20
  * Java中的匿名内部类在很多场景下都有大量使用
