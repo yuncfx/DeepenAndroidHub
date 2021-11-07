@@ -51,6 +51,7 @@ fun main() {
     test2(b = 3)
 
     println("------")
+    // 方法引用
     test3(2, 3, ::test)
 
     test3(2, 3, { a, b -> println(a - b) })
