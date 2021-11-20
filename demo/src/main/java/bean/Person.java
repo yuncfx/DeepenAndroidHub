@@ -4,9 +4,13 @@ public class Person {
 
     String name;
     String address;
+    boolean married;
     int age;
     int sex;
     int id;
+
+    public Person() {
+    }
 
     public Person(String name, String address, int age, int sex, int id) {
         this.name = name;
@@ -54,6 +58,14 @@ public class Person {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean isMarried() {
+        return married;
+    }
+
+    public void setMarried(boolean married) {
+        this.married = married;
     }
 
     @Override

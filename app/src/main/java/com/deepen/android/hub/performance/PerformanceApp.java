@@ -196,7 +196,7 @@ public class PerformanceApp extends Application {
         Fresco.initialize(this);
     }
 
-    private void initAMap() {
+    private void initAMap() throws Exception {
         mLocationClient = new AMapLocationClient(getApplicationContext());
         mLocationClient.setLocationListener(mLocationListener);
         mLocationOption = new AMapLocationClientOption();

@@ -12,7 +12,9 @@ package com.shengsiyuan.chapter7
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.EXPRESSION,
     AnnotationTarget.CONSTRUCTOR,
-    AnnotationTarget.PROPERTY_SETTER
+    AnnotationTarget.PROPERTY_SETTER,
+    AnnotationTarget.FIELD,
+    AnnotationTarget.PROPERTY_GETTER
 )
 @Retention(AnnotationRetention.SOURCE)
 @MustBeDocumented

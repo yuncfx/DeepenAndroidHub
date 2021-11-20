@@ -43,7 +43,11 @@ public class DispatchRunnable implements Runnable {
 
         // 执行Task
         mTask.setRunning(true);
-        mTask.run();
+        try {
+            mTask.run();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // 执行Task的尾部任务
         Runnable tailRunnable = mTask.getTailRunnable();
