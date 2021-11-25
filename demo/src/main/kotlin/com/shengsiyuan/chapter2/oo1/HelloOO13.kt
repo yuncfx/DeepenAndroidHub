@@ -8,6 +8,40 @@ class ExtensionTest {
 
 fun ExtensionTest.multiply(a: Int, b: Int) = a * b
 
+
+open class Base {}
+
+class Derived : Base() {}
+
+/*
+Extensions declared as members can be declared as open and overridden in subclasses.
+This means that the dispatch of such functions is virtual with regard to the dispatch receiver type,
+but static with regard to the extension receiver type.
+ */
+open class BaseCaller {
+    open fun Base.printFunctionInfo() {
+        println("Base extension function in BaseCaller")
+    }
+
+    open fun Derived.printFunctionInfo() {
+        println("Derived extension function in BaseCaller")
+    }
+
+    fun call(b: Base) {
+        b.printFunctionInfo()   // call the extension function
+    }
+}
+
+class DerivedCaller : BaseCaller() {
+    override fun Base.printFunctionInfo() {
+        println("Base extension function in DerivedCaller")
+    }
+
+    override fun Derived.printFunctionInfo() {
+        println("Derived extension function in DerivedCaller")
+    }
+}
+
 fun main(args: Array<String>) {
     val extensionTest = ExtensionTest()
     println(extensionTest.add(1, 2))
@@ -19,6 +53,10 @@ fun main(args: Array<String>) {
     myPrint(BB()) // print a
 
     CC().foo()
+
+    BaseCaller().call(Base())   // "Base extension function in BaseCaller"
+    DerivedCaller().call(Base())  // "Base extension function in DerivedCaller" - dispatch receiver is resolved virtually
+    DerivedCaller().call(Derived())  // "Base extension function in DerivedCaller" - extension receiver is resolved statically
 }
 
 // 扩展函数的解析是静态的。
@@ -28,7 +66,8 @@ fun main(args: Array<String>) {
     3. 调用是由对象声明类型所决定的，而不是由对象的实际类型决定的。
  */
 open class AA
-class BB: AA()
+class BB : AA()
+
 fun AA.a() = "a"
 fun BB.a() = "b"
 fun myPrint(aa: AA) {
