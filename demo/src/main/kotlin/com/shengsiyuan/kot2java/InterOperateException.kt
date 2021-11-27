@@ -1,4 +1,4 @@
-package com.shengsiyuan.chapter8
+package com.shengsiyuan.kot2java
 
 import kot.relative.MyException
 
