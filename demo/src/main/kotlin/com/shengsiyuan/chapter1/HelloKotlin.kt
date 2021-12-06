@@ -4,6 +4,8 @@ fun main(args: Array<String>) {
     println(sum(1, 2))
     println(sum2(2, 3))
     myPrint(3, 4)
+
+    println((1..2).random())
 }
 
 fun sum(a: Int, b: Int): Int {
