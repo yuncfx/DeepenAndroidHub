@@ -4,7 +4,7 @@ import org.junit.Assert.assertTrue
 
 /*  P17
     use-site variance(type projection)，类型投影
-    Kotlin除了声明处协变， 也提供使用处协变。
+    Kotlin除了声明处变量， 也提供使用处变量。
  */
 
 // 数组的浅拷贝

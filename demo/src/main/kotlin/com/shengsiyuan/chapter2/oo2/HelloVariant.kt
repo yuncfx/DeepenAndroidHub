@@ -7,9 +7,9 @@ package com.shengsiyuan.chapter2.oo2
     Kotlin: 声明处协变；Java: 使用处协变
 
     Kotlin中的out关键字叫做 variance annotation, 因为它是在类型参数声明处所指定的，
-    因此我们称之为声明处协变 (declaration-site variance)
+    因此我们称之为声明处变量 (declaration-site variance)
 
-    对于Java来说则是使用处协变 (use-site variance)，其中类型通配符使得类型协变成为可能。
+    对于Java来说则是使用处变量 (use-site variance)，其中类型通配符使得类型协变成为可能。
  */
 
 /**
