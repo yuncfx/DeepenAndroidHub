@@ -1,7 +1,7 @@
 package zx.base.s2
-
+//匿名函数和具名函数
 fun main() {
-    //第一步：函数输入输出的生命
+    //第一步：函数输入输出的声明
     val methodAction :()->String
 
     //第二步：对上面函数的实现
