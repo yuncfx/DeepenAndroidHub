@@ -31,7 +31,24 @@ fun main(args: Array<String>) {
 
     println("-----")
 
+    for (z in 4..1) {
+        println("no print")
+    }
+
+    for (z in 1 until 6) {
+        println(a)
+    }
+
+    for (z in 4 downTo 1) {
+        println(a)
+    }
+
     for (i in 10 downTo 2 step 4) {
+        println(i)
+    }
+
+    val i = 4
+    if (i in 1..5) {
         println(i)
     }
 }

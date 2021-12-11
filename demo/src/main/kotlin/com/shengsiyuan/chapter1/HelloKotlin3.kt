@@ -24,8 +24,8 @@ fun main() {
 //    var min = if (x > y) y else x
 //    println("max = $max, min:$min")
 
-    var x = 10
-    var y = 20
+   val x = 10
+   val y = 20
 
     // ctrl + shit + enter 快速换行格式化，补充大括号
     var max = if (x > y) {

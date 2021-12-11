@@ -1,7 +1,5 @@
 package kot.variance;
 
-import com.sun.corba.se.spi.orbutil.threadpool.Work;
-
 import java.util.ArrayList;
 import java.util.List;
 

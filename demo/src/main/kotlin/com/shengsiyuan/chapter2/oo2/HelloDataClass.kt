@@ -1,6 +1,6 @@
 package com.shengsiyuan.chapter2.oo2
 
-// P13
+// P13 P50总结复习到了
 // 数据类 - data class
 // lombok
 
