@@ -1,14 +1,14 @@
 package kot.relative;
 
-import com.shengsiyuan.java2kot.HelloWorld;
-import com.shengsiyuan.java2kot.NoCheckedException;
-import com.shengsiyuan.java2kot.MyTopClass;
-import com.shengsiyuan.java2kot.NoNull;
-import com.shengsiyuan.java2kot.People;
-import com.shengsiyuan.java2kot.Person;
-import com.shengsiyuan.java2kot.TopMemberKt;
-import com.shengsiyuan.java2kot2.GenericEraseDemoKt;
-import com.shengsiyuan.java2kot2.OverloadDemo;
+import com.ssy.java2kot.HelloWorld;
+import com.ssy.java2kot.NoCheckedException;
+import com.ssy.java2kot.MyTopClass;
+import com.ssy.java2kot.NoNull;
+import com.ssy.java2kot.People;
+import com.ssy.java2kot.Person;
+import com.ssy.java2kot.TopMemberKt;
+import com.ssy.java2kot2.GenericEraseDemoKt;
+import com.ssy.java2kot2.OverloadDemo;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
