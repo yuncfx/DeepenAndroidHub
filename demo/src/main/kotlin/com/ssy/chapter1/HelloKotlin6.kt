@@ -1,7 +1,7 @@
 package com.ssy.chapter1
 
 fun main(args: Array<String>) {
-    var array: IntArray = intArrayOf(1, 2, 3, 4, 5)
+    val array: IntArray = intArrayOf(1, 2, 3, 4, 5)
 
     for (item: Int in array) {
         println(item)
@@ -40,7 +40,16 @@ ${'$'}_9.99
            |hello
        |world!
    """
+    // indent 删除空格，直到遇见第一个|或第一个非空白字符
     println(text2.trimIndent())
+    // margin 删除空格，如果有|，会删除直到|，否则删除到第一个非空白字符
     println(text2.trimMargin())
 
+    val text3 = """
+            hello
+        world3    
+    """.trimIndent()
+    println("--- print text3 ---")
+    println(text3.trimIndent())
+    println(text3.trimMargin())
 }

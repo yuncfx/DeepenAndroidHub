@@ -2,15 +2,21 @@ package com.ssy.chapter1
 
 /**
  * trimIndent, trimMargin的区别
- * todo
  */
 fun main(args: Array<String>) {
-    var a: String = "hello \n world"
+    val a: String = "hello \n world"
     println(a)
+    println("-------------------")
 
-    var b: String = """    hello 
+    val b: String = """    hello 
         \n world
         welcome
-    """.trimIndent()
-    println(b)
+    """
+
+    val c: String = """    hello 
+        \n world
+        welcome
+    """
+    println(b.trimIndent())
+    println(c.trimMargin())
 }

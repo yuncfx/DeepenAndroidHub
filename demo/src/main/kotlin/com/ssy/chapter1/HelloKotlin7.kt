@@ -8,8 +8,8 @@ fun main(args: Array<String>) {
 
     println(myPrint2("test"))
 
-    var a = 6
-    var result = when (a) {
+    val a = 6
+    val result = when (a) {
         1 -> {
             println("a=1")
             10
@@ -44,10 +44,4 @@ fun myPrint(str: String): String {
     }
 }
 
-fun myPrint2(str: String): String =
-    when (str) {
-        "hello" -> str.toUpperCase()
-        "world" -> str.toUpperCase()
-        "hello world" -> str.toUpperCase()
-        else -> "other input"
-    }
+fun myPrint2(str: String): String = myPrint(str)
