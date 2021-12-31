@@ -4,14 +4,11 @@ package com.ssy.chapter3
 /* P20
  * Java中的匿名内部类在很多场景下都有大量使用
  * Kotlin的对象表达式就是为了解决匿名内部类的一些缺陷而产生的。
- */
-/*
+ *
  * 1. 匿名内部类是没有名字的类
  * 2. 匿名内部类一定是继承了某个父类或是实现了某个接口
  * 3. Java运行时会将该匿名内部类当作它所实现的接口或是所继承的父类来看待。
- */
-
-/*
+ *
  * 对象表达式：
  * object[:若干个父类型，中间用逗号隔开] {}
  *
@@ -30,6 +27,23 @@ abstract class MyAbstractClass2 {
     abstract fun printInfo()
 }
 
+val helloWorld = object {
+    val hello = "Hello"
+    val world = "World"
+    // object expressions extend Any, so `override` is required on `toString()`
+    override fun toString() = "$hello $world"
+}
+
+class C {
+    private fun getObject() = object {
+        val x: String = "x"
+    }
+
+    fun printX() {
+        println(getObject().x)
+    }
+}
+
 fun main(args: Array<String>) {
     val myObject = object : MyInterface {
         override fun myPrint(i: Int) {
@@ -40,6 +54,7 @@ fun main(args: Array<String>) {
     myObject.myPrint(100)
     println("-----")
 
+    // object expression
     val myObject2 = object {
         init {
             println("init")
@@ -47,6 +62,10 @@ fun main(args: Array<String>) {
 
         var myProperty = "hello world"
         fun myMethod() = "myMethod()"
+        // object expressions extend Any, so `override` is required on `toString()`
+        override fun toString(): String {
+            return super.toString()
+        }
     }
 
     println(myObject2.myProperty)
@@ -71,4 +90,6 @@ fun main(args: Array<String>) {
     myObject3.myPrint(200)
     println(myObject3.age)
     myObject3.printInfo()
+
+    println(helloWorld.toString())
 }
