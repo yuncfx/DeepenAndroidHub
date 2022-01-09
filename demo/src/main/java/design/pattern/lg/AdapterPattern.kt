@@ -1,5 +1,8 @@
 package design.pattern.lg
 
+/**
+ * 适配器模式 demo
+ */
 // 目标类或接口
 interface TargetAbstraction {
     fun filter(str: String): String

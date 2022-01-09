@@ -1,6 +1,8 @@
 package design.pattern.lg
 
 /*
+    单例模式 demo
+
     两个角色 Client客户端， Singleton单例类
     实现要点：
     1. 构造方法不对外开放，一般是private
