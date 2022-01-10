@@ -11,6 +11,9 @@ fun main(args: Array<String>) {
 
     printMultiply2("2", "3")
     printMultiply2("2", "a")
+
+    println(convert2Uppercase("hello world"))
+    println(convert2Uppercase(23))
 }
 
 fun convert2Int(str: String): Int? {
@@ -36,16 +39,6 @@ fun printMultiply2(a: String, b: String) {
     val a2Int = convert2Int(a)
     val b2Int = convert2Int(b)
 
-//    println(a2Int * b2Int)
-
-//    if (null == a2Int) {
-//        println("param not int")
-//    } else if (null == b2Int) {
-//        println("param not int")
-//    } else {
-//        println(a2Int * b2Int)
-//    }
-
     when {
         (null == a2Int) || (null == b2Int) -> {
             println("param not int")
@@ -54,4 +47,11 @@ fun printMultiply2(a: String, b: String) {
             println(a2Int * b2Int)
         }
     }
+}
+
+fun convert2Uppercase(str: Any): String? {
+    if (str is String) {
+        return str.toUpperCase()
+    }
+    return null
 }

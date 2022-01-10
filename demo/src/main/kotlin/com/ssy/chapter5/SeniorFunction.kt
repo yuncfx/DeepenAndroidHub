@@ -5,11 +5,15 @@ package com.ssy.chapter5
 /*
  * P26 - P27
  * 默认参数 default arguments
+ * 在JVM上:在Kotlin中调用Java方法时不能使用具名参数语法， 因为Java字节码并不总是会保留方法参数名信息
  */
 fun test(a: Int = 0, b: Int = 1) = println(a - b)
 
 /*
  * 如果一个默认参数位于其它无默认值的参数前面， 那么默认值只能通过在调用函数时使用具名参数的方式来使用。
+ *
+ * 在调用函数时，如果同时使用了位置参数与具名参数，那么所有的位置参数都必须要位于第一个具名参数之前
+ * 比如说，foo(1, x = 2)是允许的；foo(x = 1, 2) 是不允许的。
  */
 fun test2(a: Int = 1, b: Int) = println(a - b)
 
@@ -28,12 +32,28 @@ fun test3(a: Int = 1, b: Int = 2, compute: (x: Int, y: Int) -> Unit) {
 fun test4(a: Int, b: Int = 2, c: Int = 3, d: Int) = println(a + b + c + d)
 
 /*
- 在调用函数时，如果同时使用了位置参数与具名参数，那么所有的位置参数都必须要位于第一个具名参数之前
- 比如说，foo(1, x = 2)是允许的；foo(x = 1, 2) 是不允许的。
+    可变参数， 可以使用spread操作符调用
+    test4(strings = *arrayOf("a", "b", "c"))
  */
 fun test4(vararg strings: String) {
     println(strings.javaClass) // strings的java类型是数组类型
     strings.forEach { println(it) }
+}
+
+fun unit(): Unit {
+    return Unit
+}
+
+/**
+    val list = asList(1, 2, 3)
+    @param the [ts] variable has type Array<out T>.
+ */
+fun <T> asList(vararg ts: T) : List<T> {
+    val result = ArrayList<T>()
+    for (t in ts) {
+        result.add(t)
+    }
+    return result
 }
 
 fun main() {
@@ -87,9 +107,13 @@ fun main() {
     // 分散运算符
     test4(*arrays)
 
-    /*
-     * 在Kotlin中调用Java方法时不能使用具名参数语法， 因为Java字节码并不总是会保留方法参数名信息
-     */
+    println("-----")
+    val a = arrayOf(1, 2, 3)
+    // vararg在方法中只能有一个。但是位置不一定是要在最后一个
+    val list = asList(-1, 0, *a, 4)
+    val a2 = intArrayOf(1, 2, 3) // IntArray is a primitive type array
+    // 如果你想将一个原始类型数组传递给vararg，你需要使用toTypedArray()函数将其转换为一个常规(类型化)数组:
+    val list2 = asList(-1, 0, *a2.toTypedArray(), 4)
 }
 
 
