@@ -33,7 +33,7 @@ fun <T> convert2List(vararg  elements: T) : List<T> {
 fun main(args: Array<String>) {
     convert2List("hello", "world", "hello world")
 
-    var elements = arrayOf("welcome", "bye", "test")
+    val elements = arrayOf("welcome", "bye", "test")
     println(convert2List("zhangsan", "lisi", elements))
 
 }
