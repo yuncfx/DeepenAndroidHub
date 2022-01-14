@@ -171,7 +171,6 @@ fun main() {
     /*
         当可以从上下文中推断出接收器类型时，Lambda 表达式可以用作带有接收器的函数字面量。
         它们使用的最重要的例子之一是类型安全的构建器：
-        todo 还没想好逻辑
      */
     html { // lambda with receiver begins here
         body() // calling a method on the receiver object
@@ -179,7 +178,11 @@ fun main() {
         this.body2()
     }
 
-    html(fun(_: HTML) {})
+    html(fun(html: HTML) {
+        html.body()
+        html.body()
+        html.body2()
+    })
 }
 
 fun compare(a: String, b: String): Boolean = a.length < b.length
@@ -207,8 +210,8 @@ class HTML {
 }
 
 fun html(init: HTML.() -> Unit): HTML {
-    val html = HTML() // create the receiver object
-    html.init() // pass the receiver object to the lambda
+    val html = HTML()
+    html.init()
     return html
 }
 
