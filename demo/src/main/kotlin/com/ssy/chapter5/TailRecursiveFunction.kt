@@ -1,5 +1,7 @@
+@file:Official
 package com.ssy.chapter5
 
+import com.ssy.Official
 import kotlin.math.abs
 import kotlin.math.cos
 

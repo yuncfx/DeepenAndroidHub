@@ -1,7 +1,8 @@
 package com.ssy.chapter4
 
-import sun.net.NetworkServer
 import java.io.File
+
+class NetworkServer
 
 /*
     类型别名为现有类型提供替代名称。 如果类型名称太长，您可以引入一个不同的较短名称并使用新名称。

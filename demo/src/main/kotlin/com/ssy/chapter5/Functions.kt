@@ -31,8 +31,8 @@ lateinit var f4: (Int) -> (Int) -> Unit
 typealias ClickHandler = (Button, B1) -> Unit
 
 
-// Instantiating a function type 初始化一个函数类型
 /*
+    Instantiating a function type 初始化一个函数类型
     在函数字面量中使用下列形式之一的代码块：
         lambda表达式 {a, b -> a + b}
         匿名函数 fun(s: String): Int {return s.toIntOrNull() ?: 0}
@@ -69,16 +69,15 @@ fun runTransformation(f: (String, Int) -> String): String {
 
 val result = runTransformation(repeatFun)
 
-// Invoking a function type instance
 /*
+    Invoking a function type instance
     A value of a function type can be invoked by using its invoke(...) operator: f.invoke(x)
     or just f(x).
  */
 val stringPlus: (String, String) -> String = String::plus
 val intPlus: Int.(Int) -> Int = Int::plus
 
-// lambda expression syntax
-/*
+/*  lambda expression syntax, lambda表达式语法：
     1. lambda表达式总是被大括号包着
     2. 如果返回类型不是Unit，则最后一行的表达式的值被认为是返回值
  */

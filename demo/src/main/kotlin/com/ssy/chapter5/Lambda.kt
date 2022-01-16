@@ -1,7 +1,7 @@
 package com.ssy.chapter5
 
 /*
-    P28
+    P28, P29
     高阶函数(high-order function)与lambda
     接收一个函数为参数或返回值为一个函数，这个函数就是高阶函数
 
@@ -22,3 +22,31 @@ val myAction = { println("hello world") }
 
 val myReturnNull: (Int, Int) -> Int? = { _, _ -> null }
 val functionMaybeNull: ((Int, Int) -> Int)? = null
+fun myCalculate(a: Int, b: Int, calculate: (Int, Int) -> Int): Int {
+    return calculate(a, b)
+}
+
+fun String.filter(predicate: (Char) -> Boolean): String {
+    val str = StringBuilder()
+    this.forEach {
+        if (predicate(it)) {
+            str.append(it)
+        }
+    }
+
+    return str.toString()
+}
+
+fun main() {
+    println(myCalculate(2, 3) { x, y -> x + y })
+    println(myCalculate(2, 3) { x, y -> x - y })
+    println(myCalculate(2, 3) { x, y -> x * y })
+    println(myCalculate(2, 3) { x, y -> x / y })
+
+    val str = "abc2def9xy7"
+    println(str.filter {
+        it.isDigit()
+    })
+
+    println(str.filter { it.isLetter() })
+}
