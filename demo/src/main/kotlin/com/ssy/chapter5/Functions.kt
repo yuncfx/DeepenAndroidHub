@@ -198,19 +198,3 @@ fun max(list: List<String>, block: (String, String) -> Boolean): String {
     return max
 }
 
-class HTML {
-    fun body() {
-
-    }
-
-    fun body2(): Int {
-        return 0
-    }
-}
-
-fun html(init: HTML.() -> Unit): HTML {
-    val html = HTML()
-    html.init()
-    return html
-}
-

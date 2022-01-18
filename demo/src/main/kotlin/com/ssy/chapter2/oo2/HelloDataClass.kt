@@ -14,7 +14,7 @@ package com.ssy.chapter2.oo2
  * 1. equals/hashCode对
  * 2. toString()方法, 形式为Person(name=..., age=..., address=...)
  * 3. 针对属性的componentN方法，并且是按照属性的声明顺序来生成的。
- * 4. copy方法
+ * 4. copy方法(默认是浅拷贝)
  *
  * 关于数据类成员的继承要点：
  * 1. 如果数据类中显示定义了equals，hashCode或是toString方法，或是在数据类的父类中将

@@ -2,7 +2,7 @@ package com.ssy.chapter2.oo2
 
 import org.junit.Assert.assertTrue
 
-// P15 todo 协变， 逆变， 不变
+// P15
 // 在Kotlin中：Consumer in, Producer out
 class ParameterizedClass<A>(private val value: A) {
     fun getValue(): A {

@@ -75,7 +75,7 @@ fun main(args: Array<String>) {
 
     producer2.produce()
 
-    // 对于“in”泛型来说， 我们可以将父类型对象赋给子类型引用
+    // 对于"in"泛型来说， 我们可以将父类型对象赋给子类型引用
     val consumer1: Consumer<ApplePear> = Human()
     val consumer2: Consumer<ApplePear> = Man()
     val consumer3: Consumer<ApplePear> = Boy()

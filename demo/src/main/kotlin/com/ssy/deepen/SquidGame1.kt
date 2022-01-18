@@ -15,7 +15,6 @@ fun hello2() = {
 
 const val world = "multiline world"
 
-// todo 反编译查看原理
 /*
     在Java编译器处理之后，else if结构实际上只是用一个"单行"if调用else来处理的，也就是说，不管有多少个else if，
     实际是都会转化为else中的嵌套。【在Kotlin中，函数在if-else块之前被解析，所以.let { print(it) }只适用于最后
