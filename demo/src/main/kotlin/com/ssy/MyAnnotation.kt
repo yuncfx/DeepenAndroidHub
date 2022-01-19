@@ -10,4 +10,4 @@ annotation class Official()
  * Custom annotation indicates that the file/class is from WeChat public account articles.
  */
 @Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
-annotation class PublicAccount()
+annotation class PublicAccount(val depict: String)

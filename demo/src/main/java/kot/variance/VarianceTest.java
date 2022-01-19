@@ -10,21 +10,22 @@ public class VarianceTest {
         personArrayList.add(new Worker1("bbb", 12));
         personArrayList.add(new Worker2("ccc", 13));
 
-        List<Worker1> personArrayList1 = new ArrayList<>();
-        personArrayList1.add(new Worker1("ddd", 14));
-        List<Worker2> personArrayList2 = new ArrayList<>();
-        personArrayList2.add(new Worker2("eee", 15));
+        List<Worker1> worker1List = new ArrayList<>();
+        worker1List.add(new Worker1("ddd", 14));
+        List<Worker2> worker2List = new ArrayList<>();
+        worker2List.add(new Worker2("eee", 15));
 
         setWork(personArrayList);
-        // List《Worker1》和List《Worker2》不是List《Person》的子类
-        // setWork(personArrayList1); // not compile
-        // setWork(personArrayList2); // not compile
-        setCovariantWork(personArrayList1);
-        setCovariantWork(personArrayList2);
+
+        // List<Worker1>和List<Worker2>不是List<Person>的子类
+        // setWork(worker1List); // not compile
+        // setWork(worker2List); // not compile
+        setCovariantWork(worker1List);
+        setCovariantWork(worker2List);
 
         // not compile, List<Person>显然不能传给List<Worker1>
         // setWorker2(personArrayList);
-        setWorker2(personArrayList1);
+        setWorker2(worker1List);
 
         setContraVariantWork(personArrayList);
     }

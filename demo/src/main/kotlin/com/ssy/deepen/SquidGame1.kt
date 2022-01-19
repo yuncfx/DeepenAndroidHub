@@ -1,4 +1,7 @@
+@file:PublicAccount("鱿鱼游戏")
 package com.ssy.deepen
+
+import com.ssy.PublicAccount
 
 // public fun hello(): Unit
 fun hello() = println("Hello, World")

@@ -1,4 +1,4 @@
-@file:PublicAccount
+@file:PublicAccount("鱿鱼游戏")
 
 package com.ssy.deepen
 
@@ -81,14 +81,75 @@ class Example : Node("container") {
     }
 }
 
+/*
+    out协变，往外输出，是生产者， Producer, 上界定义为T，可以将T的子类型当做T读出来
+    Wrapper<Any>就是Wrapper<Nothing>的父类型，读出来的一定是Any
+    类比Java中的 ? extends T
+ */
 class Wrapper<out T>
+
+/*
+    in逆变，往里写入，是消费者，Consumer，下界定义为T，可以将T往里写入，因为T是这个类型的子类型。
+    为什么可以把Wrapper2<Any>赋值给Wrapper2<Nothing>呢，Any是Nothing的父类型。
+    类比Java中的 ? super T
+ */
 class Wrapper2<in T>
+
 // val instanceVariableOne: Wrapper<Nothing> = Wrapper<Any>() // won't compile
 // Nothing是Any的子类型
 val instanceVariableTwo: Wrapper<Any> = Wrapper<Nothing>()
 
 val instanceVariableThree: Wrapper2<Nothing> = Wrapper2<Any>()
 //val instanceVariableFour: Wrapper2<Any> = Wrapper2<Nothing>() // won't compile
+
+enum class Color {
+    Red, Green, Blue;
+
+    companion object
+}
+
+fun Color.from(s: String) = when (s) {
+    "#FF0000" -> Color.Red
+    "#00FF00" -> Color.Green
+    "#0000FF" -> Color.Blue
+    else -> null
+}
+
+fun Color.Companion.from2(s: String) = when (s) {
+    "#FF0000" -> Color.Red
+    "#00FF00" -> Color.Green
+    "#0000FF" -> Color.Blue
+    else -> null
+}
+
+operator fun String.invoke(x: () -> String) = this + x()
+fun String.z() = "!$this"
+fun String.toString() = "$this!"
+
+class Lazy {
+    var x = 0
+    val y by lazy { 1 / x }
+
+    /*
+        Lazy delegate可以被多次调用，直到它真正返回一个值为止，所以抛出异常后，
+        x的值修改了，y可以被赋值，从而print出来。
+     */
+    fun hello() {
+        try {
+            println(y)
+        } catch (e: Exception) {
+            x = 1
+            println(y)
+        }
+    }
+}
+
+typealias L = (String) -> Unit
+
+fun foo(one: L = {}, two: L = {}) {
+    one("one")
+    two("two")
+}
 
 fun main() {
     println(sortList) // kotlin.Unit
@@ -128,6 +189,7 @@ fun main() {
         child2 lookup in: container
      */
     Example()
+    println("*** puzzle 5 end ***")
 
     /*
         在这两种情况下，我们在Int类型上使用unaryMinus操作。当你输入-1时，它与1.unaryMinus()相同。
@@ -137,6 +199,61 @@ fun main() {
     println(-1.inc())  // -2
     println(",")
     println(1 + -(1)) // 0
+    println("*** puzzle 6 end ***")
 
+    /*
+    前缀运算符++（++j）增加数字并返回新值，后缀运算符也增加属性，但返回前值。
+    但会令人疑惑的部分是，前缀和后缀都是对Kotlin函数inc的引用，你从ide中点击++i和i++，
+    都会跳到inc的引用，inc返回了一个新值，但是未被赋值。
+     */
+    var i = 0
+    println(i.inc()) // 1
+    println(i.inc()) // 1
+    var j = 0
+    println(j++) // 0
+    println(++j) // 2
+    println("*** puzzle 7 end ***")
+
+    /*
+        标签在这里毫无作用，不要被它迷惑了。
+     */
+    val wtf = wtf@ { n: Int -> wtf@ (wtf@ n + wtf@ 2) }(10)
+    println(wtf) // 12
+    println("*** puzzle 8 end ***")
+
+    /*
+        Elvis operator的优先级比+低
+     */
+    val x: Int? = 2
+    val y: Int = 3
+    val sum = x ?: 0 + y
+    println(sum)
+    println("*** puzzle 9 end ***")
+
+    // not compile, 扩展方法只能由实例使用。
+    //Color.from("#00FF00")
+    // 这其实是调用了伴生对象的扩展方法
+    Color.from2("#00FF00")
+    println("*** puzzle 10 end ***")
+
+    /*
+        这道题重点是理清"x"{"y"}.z()，去掉z()，实际上就是重载的invoke函数，
+        所以等价于String{}，{}就是invoke的参数。
+        这里的扩展方法toString()不会使用，会被String自带的toString()覆盖掉。
+     */
+    println("x"{ "y" }.z())
+    println("*** puzzle 10 end ***")
+
+    Lazy().hello()
+    println("*** puzzle 11 end ***")
+
+    /*
+    这道题搞清楚了，lambda就算是真的搞清楚了，foo {}，代表的是lambda省略()的写法，
+    {}实际上是foo的最后一个参数，而foo()，括号中的内容，实际上是foo中按顺序的第一个参数。
+    • 这对DSL来说是非常好的，可以通过Kotlin完成各种DSL的写法。
+    • 但是当与默认参数结合在一起时，可能会引起混淆，不要把许多lambda作为参数，如果你仍然这样做，要避免使用默认值。
+     */
+    foo { println(it) } // two
+    foo({ println(it) }) // one
 
 }
