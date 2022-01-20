@@ -125,7 +125,10 @@ fun html(init: HTML.() -> Unit): HTML {
     html.init()
     return html
 }
-//
+
+// todo Using builders with builder type inference
+//@OptIn(ExperimentalTypeInference::class)
+//@BuilderInference
 //fun <K, V> buildMap(builder: MutableMap<K, V>.() -> Unit): Map<K, V> {
 //
 //}
