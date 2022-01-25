@@ -44,9 +44,56 @@ class MyClass6
     在对类的属性或是主构造方法的参数声明注解时，会存在多个Java元素都可以通过对应的Kotlin元素生成出来，
     因此，在所生成的Java字节码中，就会存在多个可能的位置来生成相应的注解。
     若想精确指定如何来生成注解，那么可以使用注解的使用处目标方式来实现
+
+    支持使用处目标的列表如下：
+    1. file
+    2. property  (annotations with this target are not visible to Java)
+    3. field
+    4. get (property getter)
+    5. set (property setter)
+    6. receiver (receiver parameter of an extension function or property)
+    7. param (construct parameter)
+    8. setparam (property setter parameter)
+    9. delegate (the field storing the delegate instance for a delegated property)
  */
 class MyClass7(
-    @field:MyAnnotation val arg1: String, // 注解Java Field
+    @field: MyAnnotation val arg1: String, // 注解Java Field
     @get: MyAnnotation val arg2: String, // 注解 Java getter
     @param: MyAnnotation val arg3: String // 注解 Java构造方法参数
 )
+
+fun @receiver:MyAnnotation String.myExtension() {
+    println("myExtension")
+}
+
+class Example {
+    // 如果同一个target有多个注解，可以将它们放在一个中括号中
+    @set:[Suspendable MyAnnotation2("test")]
+    var clazz: MyClass7? = null
+}
+
+// The compiler generates the @Tag.Container containing annotation
+@Repeatable
+annotation class Tag(val name: String)
+
+// 强行指定Container的名字为Tags
+@JvmRepeatable(Tags::class)
+annotation class Tag2(val name: String)
+annotation class Tags(val value: Array<Tag2>)
+
+/*
+    SinceKotlin("1.6")
+    在 Java 中，注解类型是接口的一种形式，因此您可以实现它并使用实例。 作为这种机制的替代方案，Kotlin 允许您在
+    任意代码中调用注解类的构造函数，并类似地使用生成的实例。
+ */
+annotation class InfoMarker(val info: String)
+
+fun processInfo(marker: InfoMarker): Unit = TODO()
+
+@SinceKotlin("1.6")
+fun main(args: Array<String>) {
+    if (args.isNotEmpty())
+//        processInfo(getAnnotationReflective(args))
+    else
+        processInfo(InfoMarker("default"))
+}
