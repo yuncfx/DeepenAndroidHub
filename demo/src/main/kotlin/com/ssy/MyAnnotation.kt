@@ -1,13 +1,19 @@
 package com.ssy
 
 /**
- * Custom annotation indicates that the file/property/class is from Official doc.
+ * The Custom annotation indicates that file/class is from official documentation
  */
-@Target(AnnotationTarget.PROPERTY, AnnotationTarget.FILE, AnnotationTarget.CLASS)
+@Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
 annotation class Official()
 
 /**
- * Custom annotation indicates that the file/class is from WeChat public account articles.
+ * The Custom annotation indicates that file/class is from WeChat public account articles.
  */
 @Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
 annotation class PublicAccount(val depict: String)
+
+/**
+ * The Custom annotation indicates that file/class is supplemented by official documentation
+ */
+@Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
+annotation class OfficialSupplement(val depict: String = "")

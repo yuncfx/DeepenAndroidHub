@@ -1,5 +1,8 @@
+@file:Official
+
 package com.ssy.chapter7
 
+import com.ssy.Official
 import java.io.IOException
 import java.io.Writer
 
@@ -204,6 +207,7 @@ fun closeQuietly(output: Writer?) {
 
     @Synchronized
     该注解充当了Java中的synchronized关键字
+
     @Volatile
     该注解充当了Java中的volatile关键字
  */

@@ -25,8 +25,9 @@ package com.ssy.chapter2.oo2
  * 3. 在数据类中显示提供componentN方法以及copy方法实现是不允许的。
  *
  * 解构声明：
- * 在主构造方法中有多少个参数，就会依次生成对应的component1, component2, component3...
+ * 数据类在主构造方法中有多少个参数，就会依次生成对应的component1, component2, component3...
  * 这些方法返回的就是对应字段的值，componentN方法就是用来实现解构声明的。
+ * component() 函数需要用 operator 关键字标记，以允许在解构声明中使用它们。
  */
 data class Person(val name: String, var age: Int, var address: String)
 
