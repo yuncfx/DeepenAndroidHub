@@ -71,12 +71,6 @@ class Person {
     @file:JvmName("IOUtils")
     @file:JvmMultifileClass
 
-    package com.mikyou.annotation
-
-    import java.io.IOException
-    import java.io.InputStream
-
-
     fun closeStreamQuietly(input: InputStream?) {
         try {
             input?.close()
