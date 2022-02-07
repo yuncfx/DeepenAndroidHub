@@ -1,11 +1,13 @@
 package grammer
 
+import org.junit.Test
 import java.math.BigDecimal
 
 fun main() {
     test()
 }
 
+@Test
 fun test() {
     var c: BigDecimal = BigDecimal(1020049)
 

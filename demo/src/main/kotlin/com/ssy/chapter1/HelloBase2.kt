@@ -42,8 +42,12 @@ ${'$'}_9.99
    """
     // indent 删除空格，直到遇见第一个|或第一个非空白字符
     println(text2.trimIndent())
-    // margin 删除空格，如果有|，会删除直到|，否则删除到第一个非空白字符
+    /*
+         margin 删除空格，如果有|，会删除直到|，否则删除到第一个非空白字符,
+         可以传递自定义参数如"#"，则"#"会替换掉"|"
+     */
     println(text2.trimMargin())
+    println(text2.trimMargin("#"))
 
     val text3 = """
             hello

@@ -9,15 +9,16 @@ import java.io.Writer
 /*
    TODO 设置JvmDefault
    @JvmDefault注解就是为非抽象的接口成员生成默认的方法。
+   @see https://blog.jetbrains.com/kotlin/2020/07/kotlin-1-4-m3-generating-default-methods-in-interfaces/
 
    在没有添加 @JvmDefault注解，Kotlin会自动生成一个叫做 DefaultImpl静态内部类，用于保存静态方法的默认实现，
    并使用自身接收器类型来模拟属于对象的方法。然后，对于扩展该接口的每种类型，如果类型没有实现方法本身，
    则在编译时，Kotlin将通过调用将方法连接到默认实现。
  */
-//interface ITeaching {
+interface ITeaching {
 //    @JvmDefault//注意: 可能一开始使用该注解会报错，需要在gradle中配置jvm参数:-jvm-target=1.8 -Xjvm-default=enable
-//    fun speak() = println("open the book")
-//}
+    fun speak() = println("open the book")
+}
 
 
 /*
@@ -105,14 +106,23 @@ class Student {
 
 /*
     @JvmOverloads 指导Kotlin编译器为带默认参数值的函数(包括构造函数)生成多个重载函数。
-    class ScrollerView @JvmOverloads constructor(
-        context: Context,
-        attr: AttributeSet? = null,
-        defStyle: Int = 0
-    ) : View(context, attr, defStyle) {
-        //...
-    }
+
+    实际生成的代码如下：
+    // Constructors:
+    Circle(int centerX, int centerY, double radius)
+    Circle(int centerX, int centerY)
+
+    // Methods
+    void draw(String label, int lineWidth, String color) { }
+    void draw(String label, int lineWidth) { }
+    void draw(String label) { }
  */
+class Circle @JvmOverloads constructor(centerX: Int, centerY: Int, radius: Double = 1.0) {
+    @JvmOverloads
+    fun draw(label: String, lineWidth: Int = 1, color: String = "red") { /*...*/
+    }
+}
+
 
 /*
     @JvmPackageName
@@ -142,9 +152,10 @@ class Data {
 }
 
 /*
-    @JvmSuppressWildcards和@JvmWildcard
+    @JvmSuppressWildcards 和 @JvmWildcard
     用于指示编译器生成或省略类型参数的通配符，JvmSuppressWildcards用于参数的泛型是否生成或省略通配符，
     而JvmWildcard用于返回值的类型是否生成或省略通配符
+    @see https://kotlinlang.org/docs/java-to-kotlin-interop.html#variant-generics
 
     class CovertImpl implements ICovert {
     @Override
