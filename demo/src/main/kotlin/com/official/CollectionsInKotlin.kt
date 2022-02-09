@@ -1,4 +1,7 @@
+@file:Official
 package com.official
+
+import com.ssy.Official
 
 /*
     在 Kotlin 中，只读集合类型是协变的。 这意味着如果 Rectangle 类继承自 Shape 类，您可以在需要 List<Shape>

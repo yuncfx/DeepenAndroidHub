@@ -2,9 +2,6 @@ package com.deepen.android.hub.codelib
 
 import android.app.Application
 import android.content.Context
-import com.blankj.utilcode.util.LogUtils
-import com.blankj.utilcode.util.Utils
-import com.bumptech.glide.util.Util
 import com.tencent.smtt.sdk.QbSdk
 import com.tencent.smtt.sdk.QbSdk.PreInitCallback
 
@@ -16,7 +13,6 @@ class BaseApplication constructor() : Application() {
         super.onCreate()
         sMainInstance = this
         initX5()
-        Utils.init(this)
     }
 
     private fun initX5() {
@@ -24,7 +20,6 @@ class BaseApplication constructor() : Application() {
             public override fun onViewInitFinished(arg0: Boolean) {
                 // TODO Auto-generated method stub
                 //x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
-                LogUtils.d(TAG, " onViewInitFinished is " + arg0)
             }
 
             public override fun onCoreInitFinished() {

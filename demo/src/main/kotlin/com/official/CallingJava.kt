@@ -1,5 +1,7 @@
+@file:Official
 package com.official
 
+import com.ssy.Official
 import kot.relative.JavaArrayExample
 import java.util.*
 
@@ -116,9 +118,6 @@ fun main() {
     println(int) // int
     println(int2) // class java.lang.Integer
     println(int === int2) // false
-
-
-
 }
 
 

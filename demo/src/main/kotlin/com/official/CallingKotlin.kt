@@ -1,31 +1,33 @@
+@file:Official
 package com.official
 
+import com.ssy.Official
 import java.security.Provider
 
 /**
-Kotlin属性在Java中的生成规则；
-一个 getter 方法，其名称是通过添加 get 前缀来得出的
-一个 setter 方法，通过在 set 前缀前面计算名称（仅适用于 var 属性）
-一个私有字段，与属性名称同名（仅适用于具有支持字段的属性）
+    Kotlin属性在Java中的生成规则；
+    一个 getter 方法，其名称是通过添加 get 前缀来得出的
+    一个 setter 方法，通过在 set 前缀前面计算名称（仅适用于 var 属性）
+    一个私有字段，与属性名称同名（仅适用于具有支持字段的属性）
 
-private String firstName;
+    private String firstName;
 
-public String getFirstName() {
-return firstName;
-}
+    public String getFirstName() {
+    return firstName;
+    }
 
-public void setFirstName(String firstName) {
-this.firstName = firstName;
-}
+    public void setFirstName(String firstName) {
+    this.firstName = firstName;
+    }
 
-如果属性名称以is开头，则使用不同的名称映射规则：getter的名称将与属性名称相同，setter的名称将is替换为set。
-例如，对于一个属性 isOpen，getter 将被称为 isOpen()，而 setter 将被称为 setOpen()。 此规则适用于任何类
-型的属性，而不仅仅是布尔值。
+    如果属性名称以is开头，则使用不同的名称映射规则：getter的名称将与属性名称相同，setter的名称将is替换为set。
+    例如，对于一个属性 isOpen，getter 将被称为 isOpen()，而 setter 将被称为 setOpen()。 此规则适用于任何类
+    型的属性，而不仅仅是布尔值。
  */
 
 /*
-  在包 org.example 内的文件 app.kt 中声明的所有函数和属性，包括扩展函数，都被编译为名为 org.example.AppKt
-  的 Java 类的静态方法。
+    在包 org.example 内的文件 app.kt 中声明的所有函数和属性，包括扩展函数，都被编译为名为 org.example.AppKt
+    的 Java 类的静态方法。
  */
 
 /*

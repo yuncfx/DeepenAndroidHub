@@ -1,4 +1,7 @@
+@file:Official
 package com.official
+
+import com.ssy.Official
 
 /*
     Kotlin对Java的增强：
