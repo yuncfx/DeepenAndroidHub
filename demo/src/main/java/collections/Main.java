@@ -24,13 +24,13 @@ public class Main {
     }
 
     /**
-     * copy´«ÈëµÄarray£¬²¢·µ»ØÒ»¸öĞÂarray2£¬array2±Èarray¶àÒ»¸öelementÔÚÎ²²¿¡£
+     * copyä¼ å…¥çš„arrayï¼Œå¹¶è¿”å›ä¸€ä¸ªæ–°array2ï¼Œarray2æ¯”arrayå¤šä¸€ä¸ªelementåœ¨å°¾éƒ¨ã€‚
      *
      * @param array
-     *            ĞèÒª²Ù×÷µÄÊı×é£¬¿ÉÄÜÎªnull
+     *            éœ€è¦æ“ä½œçš„æ•°ç»„ï¼Œå¯èƒ½ä¸ºnull
      * @param element
-     *            Ìí¼ÓµÄÔªËØ
-     * @return ĞÂÊı×é
+     *            æ·»åŠ çš„å…ƒç´ 
+     * @return æ–°æ•°ç»„
      */
     public static long[] add(long[] array, long element) {
         long[] newArray = (long[]) copyArrayGrow1(array, Long.TYPE);
