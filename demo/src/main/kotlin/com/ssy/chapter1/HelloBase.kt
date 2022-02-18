@@ -102,7 +102,7 @@ fun main(args: Array<String>) {
     println("-----")
 
     array.filter { it.length > 5 }.map {
-        it.toUpperCase()
+        it.uppercase()
     }.sorted().forEach {
         println(it)
     }

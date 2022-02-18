@@ -14,7 +14,7 @@ fun main() {
         //apply函数不持有it，确持有当前this
         println("apply 匿名函数里面打印 info 本身：$this")
         println(this.length)
-        println(this.toUpperCase())
+        println(this.uppercase())
         println(this)
     }
 

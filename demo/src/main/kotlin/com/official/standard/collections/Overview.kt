@@ -54,4 +54,18 @@ fun main() {
     val shortWords = mutableListOf<String>()
     words.getShortWordsTo(shortWords, 3)
     println(shortWords)
+
+
+    val numbers = mutableListOf("one", "two", "three", "four")
+    val filterResults = mutableListOf<String>()  //destination object
+    numbers.filterTo(filterResults) { it.length > 3 }
+    // add the item of index 0 to filterResults
+    numbers.filterIndexedTo(filterResults) { index, _ -> index == 0 }
+    println(filterResults) // contains results of both operations
+
+    // pair operation
+    val sortedNumbers = numbers.sorted()
+    println(numbers == sortedNumbers)  // false
+    numbers.sort()
+    println(numbers == sortedNumbers)  // true
 }

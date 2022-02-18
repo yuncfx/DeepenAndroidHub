@@ -37,9 +37,9 @@ fun main(args: Array<String>) {
 
 fun myPrint(str: String): String {
     return when (str) {
-        "hello" -> str.toUpperCase()
-        "world" -> str.toUpperCase()
-        "hello world" -> str.toUpperCase()
+        "hello" -> str.uppercase()
+        "world" -> str.uppercase()
+        "hello world" -> str.uppercase()
         else -> "other input"
     }
 }

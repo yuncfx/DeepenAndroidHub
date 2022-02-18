@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
     println(strings.filter { it.length > 5 })
 
     strings.filter { it.endsWith("d", true) }.map {
-        it.toUpperCase()
+        it.uppercase()
     }.forEach { println(it) }
 
 }

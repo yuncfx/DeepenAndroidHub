@@ -51,7 +51,7 @@ fun printMultiply2(a: String, b: String) {
 
 fun convert2Uppercase(str: Any): String? {
     if (str is String) {
-        return str.toUpperCase()
+        return str.uppercase()
     }
     return null
 }
