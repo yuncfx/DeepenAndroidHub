@@ -35,7 +35,6 @@ fun doSthWithShapes(shapes: List<Shape>) {
     更少的内存来存储相同数量的元素。
 
     Map 的默认实现——LinkedHashMap——在迭代map时保留元素插入的顺序。 反过来，另一种实现 - HashMap - 没有说明元素顺序。
-
  */
 
 fun List<String>.getShortWordsTo(shortWords: MutableList<String>, maxLength: Int) {

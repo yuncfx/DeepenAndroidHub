@@ -1,5 +1,7 @@
 package com.official.standard.collections
 
+import kotlin.random.Random
+
 fun main(args: Array<String>) {
     val numbers = listOf("one", "two", "three", "four", "five", "six")
     println(numbers.slice(1..3)) // [two, three, four]
@@ -38,4 +40,50 @@ fun main(args: Array<String>) {
 
     println(numbers4.zipWithNext()) // [(one, two), (two, three), (three, four), (four, five)]
     println(numbers4.zipWithNext { a, b -> a.length > b.length }) // [false, false, true, false]
+
+    println("set test---")
+    val sets = linkedSetOf("one", "two", "three", "four", "five")
+    println(sets.elementAt(3))
+
+    val sortedSet = sortedSetOf("one", "two", "three", "four")
+    println(sortedSet.elementAt(0))
+
+    println(numbers.first())
+    println(numbers.last())
+
+    println(numbers.elementAtOrNull(5))
+    numbers.elementAtOrElse(5) { index -> "the value of index $index is undefined" }
+
+    // may throw throw NoSuchElementException
+    println(numbers.first { it.length > 3 })
+    println(numbers.last { it.startsWith("f") })
+
+    // return null if not exist
+    println(numbers.firstOrNull { it.length > 6 })
+
+    println(numbers5.find { it % 2 == 0 })
+    println(numbers5.findLast { it % 2 == 0 })
+
+    val list = listOf<Any>(0, "true", false)
+    // may throw NoSuchElementException
+    val longEnough = list.firstNotNullOf { item -> item.toString().takeIf { it.length >= 4 } }
+    println(longEnough)
+
+    // may throw NoSuchElementException
+    println(numbers.random())
+    println(numbers.random(Random(3)))
+
+    // return null if not exists
+    println(numbers.randomOrNull())
+
+    println(numbers.contains("four"))
+    println("zero" in numbers)
+
+    println(numbers.containsAll(listOf("four", "two")))
+    println(numbers.containsAll(listOf("one", "zero")))
+
+    println(numbers.isEmpty())
+    println(numbers.isNotEmpty())
+
+
 }
