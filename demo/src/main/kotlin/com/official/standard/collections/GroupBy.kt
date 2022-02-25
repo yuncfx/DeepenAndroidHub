@@ -9,6 +9,4 @@ fun main(args: Array<String>) {
     println(numbers.groupBy(keySelector = { it.first() }, valueTransform = { it.uppercase() }))
 
     println(numbers.groupingBy { it.first() }.eachCount())
-
-    // todo fold(), reduce(), aggregate()
 }
