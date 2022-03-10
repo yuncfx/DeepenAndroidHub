@@ -1,6 +1,5 @@
 package com.ssy.coroutines.samples
 
-import coroutines.logThread
 import kotlinx.coroutines.*
 
 /**

@@ -20,7 +20,7 @@ import sun.text.normalizer.ReplaceableUCharacterIterator
  * 协程定义：
  * 协程通过将复杂性放入库中来简化异步编程。程序的逻辑可以在协程中顺序地表达，而底层库会为
  * 我们解决其异步性。
- * 该库可以将用户代码的相关部分包装为回调、订阅相关时间、在不同线程（甚至不同机器）上调度执行，
+ * 该库可以将用户代码的相关部分包装为回调、订阅相关事件、在不同线程（甚至不同机器）上调度执行，
  * 而代码则保持如同顺序执行一样简单。
  *
  * 协程的描述；
@@ -30,7 +30,7 @@ import sun.text.normalizer.ReplaceableUCharacterIterator
  * 协程重要概念：
  * CoroutineScope, 可以理解为协程本身，包含了CoroutineContext
  *
- * CoroutineContext， 协程上下文，是一些元素的集合，主要包含Job和CoroutineDispatcher元素，可以
+ * CoroutineContext，协程上下文，是一些元素的集合，主要包含Job和CoroutineDispatcher元素，可以
  * 代表一个协程的场景
  *
  * EmptyCoroutineContext， 表示一个空的协程上下文
@@ -70,7 +70,8 @@ fun main() {
     昂贵的资源，阻塞它们效率低下，通常是不希望的。
 
     协程遵循结构化并发原则，这意味着新的协程只能在限定协程生命周期的特定 CoroutineScope 中启动。 上面的例子
-    表明 runBlocking 建立了相应的范围，这就是为什么前面的例子等到 World! 在延迟一秒后打印，然后才退出。
+    表明 runBlocking 建立了相应的范围。
+
     在实际应用程序中，您将启动大量协程。 结构化并发确保它们不会丢失并且不会泄漏。 在其所有子协程完成之前，外部
     作用域无法完成。 结构化并发还确保正确报告代码中的任何错误并且永远不会丢失。
  */

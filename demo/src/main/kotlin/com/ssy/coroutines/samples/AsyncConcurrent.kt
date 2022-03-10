@@ -1,7 +1,5 @@
 package com.ssy.coroutines.samples
 
-import coroutines.doSomethingUsefulOne
-import coroutines.doSomethingUsefulTwo
 import kotlinx.coroutines.*
 import kotlin.system.*
 

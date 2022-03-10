@@ -1,6 +1,5 @@
 package com.ssy.coroutines.samples
 
-import coroutines.massiveRun
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.actor
 

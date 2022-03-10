@@ -1,7 +1,6 @@
 package com.ssy.coroutines.samples
 
 import bean.Person
-import coroutines.logThread
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
