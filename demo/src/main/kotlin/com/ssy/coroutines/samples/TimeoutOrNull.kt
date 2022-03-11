@@ -1,5 +1,7 @@
+@file:OfficialRelative
 package com.ssy.coroutines.samples
 
+import com.ssy.OfficialRelative
 import kotlinx.coroutines.*
 
 fun main() = runBlocking {

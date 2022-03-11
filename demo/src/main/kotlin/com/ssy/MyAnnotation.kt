@@ -6,6 +6,9 @@ package com.ssy
 @Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
 annotation class Official(val url: String = "")
 
+@Target(AnnotationTarget.FILE, AnnotationTarget.CLASS)
+annotation class OfficialRelative(val url: String = "")
+
 /**
  * The Custom annotation indicates that file/class is from WeChat public account articles.
  */

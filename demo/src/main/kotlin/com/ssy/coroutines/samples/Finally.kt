@@ -1,5 +1,7 @@
+@file:OfficialRelative
 package com.ssy.coroutines.samples
 
+import com.ssy.OfficialRelative
 import kotlinx.coroutines.*
 
 fun main() = runBlocking {
@@ -12,10 +14,10 @@ fun main() = runBlocking {
         } finally {
             println("job: I'm running finally")
             /**
-             * 在 finally 块中调用挂起函数的行为都会抛出 CancellationException，因为这里持续运行的代码是可以被取消的。
+             * 在 finally 块中调用挂起函数的行为都会抛出 CancellationException，因为执行到这里时协程已经被取消了。
              */
             launch {
-                println("我在搞点事")
+                println("我在搞点事") // never print
                 delay(1000L)
                 println("搞事结束")
             }

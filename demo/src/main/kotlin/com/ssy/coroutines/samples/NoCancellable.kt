@@ -10,6 +10,7 @@ fun main() = runBlocking {
                 delay(500L)
             }
         } finally {
+            // 如果非要在finally上执行suspend方法，需要加上NonCancellable.
             withContext(NonCancellable) {
                 println("job: I'm running finally")
                 delay(1000L)
