@@ -2,6 +2,9 @@ package com.ssy.coroutines.samples
 
 import kotlinx.coroutines.*
 
+/**
+ * 取消总是通过协程层次结构传播
+ */
 fun main() = runBlocking<Unit> {
     try {
         failedConcurrentSum()

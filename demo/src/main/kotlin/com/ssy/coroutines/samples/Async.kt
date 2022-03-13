@@ -3,6 +3,9 @@ package com.ssy.coroutines.samples
 import kotlinx.coroutines.*
 import kotlin.system.*
 
+/**
+ * 协程的并发都是显式的
+ */
 fun main() = runBlocking<Unit> {
     val time = measureTimeMillis {
         logThread("time")
