@@ -12,6 +12,7 @@ fun main() {
         newSingleThreadContext("Ctx2").use { ctx2 ->
             runBlocking(ctx1) {
                 log("Started in ctx1")
+                // 更改协程的上下文，同时仍留在同一个协程中
                 withContext(ctx2) {
                     log("Working in ctx2")
                 }

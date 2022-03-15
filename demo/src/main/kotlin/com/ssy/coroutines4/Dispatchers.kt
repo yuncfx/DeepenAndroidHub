@@ -26,11 +26,17 @@ import java.util.concurrent.Executors
  * 程序分析：
  * 1. 当通过launch来启动协程并且不指定协程分发器时，它会继承启动它的那个CoroutineScope的上下文与
  * 分发器，比如该示例中，它会继承runBlocking的上下文，而runBlocking是运行在main线程中的。
- * 2. Dispatchers.Unconfined是一种很特殊的协程分发器， 它在该示例中也是运行在main线程中，但实际
- * 上，其运行机制与不指定协程分发器时是完全不同的。在日常开发中使用较少。
+ *
+ * 2. Dispatchers.Unconfined是一种很特殊的协程分发器。Dispatchers.Unconfined 协程调度器在调用者线程中启动
+ * 一个协程，但只到第一个暂停点。挂起后，它将恢复线程中的协程，该线程完全由调用的挂起函数（例子中为delay()函数）
+ * 确定。Unconfined调度程序适用于既不消耗 CPU 时间也不更新任何受限于特定线程的共享数据（如 UI）的协程。UnConfined
+ * 是一个先进的机制，在某些极端情况下有用，如：没必要调度线程或会产生副作用时（比如需要某些需要立刻执行）。通常
+ * 情况下，我们不需要使用该调度器
+ *
  * 3. Dispatchers.Default是默认的分发器，当协程是通过GlobalScope来启动的时候，它会使用该默认的
  * 分发器来启动协程，它会使用一个后台的共享线程池来运行我们的协程代码。因此，当launch(Dispatchers.Default)
  * 等价于GlobalScope.launch{}
+ *
  * 4.Executors.newSingleThreadExecutor().asCoroutineDispatcher()会创建一个单线程池，该线程
  * 池中的线程用来执行我们所指定的协程代码；在实际开发中，使用专门的线程来执行协程代码代价是非常高的，因此在
  * 协程代码执行完毕后， 我们必须要释放相应的资源， 这里就需要使用close方法来关闭相应的协程分发器，从而释放掉
@@ -44,6 +50,7 @@ fun main() = runBlocking<Unit> {
     launch(Dispatchers.Unconfined) {
         println("Unconfined, thread:${Thread.currentThread().name}")
         delay(100)
+        println("Unconfined, thread:${Thread.currentThread().name}")
     }
 
     launch(Dispatchers.Default){
