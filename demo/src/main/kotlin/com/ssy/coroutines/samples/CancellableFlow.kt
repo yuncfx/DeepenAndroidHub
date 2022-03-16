@@ -12,6 +12,10 @@ fun simple3(): Flow<Int> = flow {
     }
 }
 
+/*
+ * Flow adheres to the general cooperative cancellation of coroutines. As usual, flow collection
+ * can be cancelled when the flow is suspended in a cancellable suspending function
+ */
 fun main() = runBlocking<Unit> {
     withTimeoutOrNull(250) { // 在 250 毫秒后超时
         simple3().collect { value -> println(value) }
