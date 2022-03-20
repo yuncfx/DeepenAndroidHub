@@ -19,6 +19,6 @@ fun main() = runBlocking<Unit> {
 
     simple12()
         .onCompletion { cause -> if (cause != null) println("Flow completed exceptionally") }
-        .catch { cause -> println("Caught exception") }
+        .catch { cause -> println("Caught exception:$cause") }
         .collect { value -> println(value) }
 }

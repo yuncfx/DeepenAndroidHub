@@ -1,8 +1,11 @@
+@file:Official("https://kotlinlang.org/docs/channels.html#prime-numbers-with-pipeline")
 package com.ssy.coroutines.samples
 
+import com.ssy.Official
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.*
 
+// todo 理解管道pipeline的意思
 @ExperimentalCoroutinesApi
 fun main() = runBlocking {
     var cur = numbersFrom(2)

@@ -3,6 +3,11 @@ package com.ssy.coroutines.samples
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.*
 
+/**
+ * Conceptually, a close is like sending a special close token to the channel.
+ * The iteration stops as soon as this close token is received, so there is a guarantee that
+ * all previously sent elements before the close are received:
+ */
 fun main() = runBlocking {
     val channel = Channel<Int>()
     launch {

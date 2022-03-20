@@ -1,8 +1,11 @@
+@file:Official("https://kotlinlang.org/docs/channels.html#ticker-channels")
 package com.ssy.coroutines.samples
 
+import com.ssy.Official
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.*
 
+// todo, find out the use of ticker
 @ObsoleteCoroutinesApi
 fun main() = runBlocking<Unit> {
     val tickerChannel = ticker(delayMillis = 100, initialDelayMillis = 0) //创建计时器通道

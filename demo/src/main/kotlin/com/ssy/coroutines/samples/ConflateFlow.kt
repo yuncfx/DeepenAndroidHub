@@ -20,7 +20,7 @@ fun simple6(): Flow<Int> = flow {
 fun main() = runBlocking<Unit> {
     val time = measureTimeMillis {
         simple6()
-            .conflate() // 合并发射项，不对每个值进行处理
+            .conflate() // 合并发射项，不对每个值进行处理， 可以丢弃掉中间部分产生太慢的值
             .collect { value ->
                 delay(300) // 假装我们花费 300 毫秒来处理它
                 println(value)

@@ -3,6 +3,10 @@ package com.ssy.coroutines.samples
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.*
 
+/**
+ * The first four elements are added to the buffer and the sender suspends when
+ * trying to send the fifth one.
+ */
 fun main() = runBlocking<Unit> {
     val channel = Channel<Int>(4) // 启动带缓冲的通道
     val sender = launch { // 启动发送者协程

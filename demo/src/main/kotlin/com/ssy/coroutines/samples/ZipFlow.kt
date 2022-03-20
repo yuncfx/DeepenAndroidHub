@@ -1,6 +1,12 @@
+package com.ssy.coroutines.samples
+
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
+/**
+ * Flow的组合
+ * zip Flow
+ */
 fun main() = runBlocking<Unit> {
 
     val nums = (1..3).asFlow() // 数字 1..3
