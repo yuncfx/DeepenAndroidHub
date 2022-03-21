@@ -3,6 +3,9 @@ package com.ssy.coroutines.samples
 import kotlinx.coroutines.*
 import kotlin.system.*
 
+/**
+ * 不安全的用法，协程未同步
+ */
 suspend fun massiveRun(action: suspend () -> Unit) {
     val n = 100  // 启动的协程数量
     val k = 1000 // 每个协程重复执行同一动作的次数

@@ -10,6 +10,8 @@ var counter3 = 0
  * 这段代码运行非常缓慢，因为它进行了 细粒度 的线程限制。
  * 每个增量操作都得使用 [withContext(counterContext)]
  * 块从多线程 Dispatchers.Default 上下文切换到单线程上下文。
+ *
+ * thread confinement fine-grained
  */
 fun main() = runBlocking {
     withContext(Dispatchers.Default) {

@@ -5,8 +5,8 @@ import kotlinx.coroutines.*
 /**
  * 对于作用域的并发，
  * 可以用 supervisorScope 来替代 coroutineScope 来实现相同的目的。
- * 它只会单向的传播并且当作业自身执行失败的时候将所有子作业全部取消。
- * 作业自身也会在所有的子作业执行结束前等待， 就像 coroutineScope 所做的那样。
+ * 它只会单向的传播并且当Job自身执行失败的时候将所有子作业全部取消。
+ * Job自身也会在所有的子作业执行结束前等待， 就像 coroutineScope 所做的那样。
  */
 fun main() = runBlocking {
     try {
