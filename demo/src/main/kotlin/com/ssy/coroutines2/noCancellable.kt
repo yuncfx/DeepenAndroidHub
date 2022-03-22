@@ -15,7 +15,7 @@ fun main() = runBlocking {
 
         var i = 0
 
-        while (i < 20) {
+        while (i < 10) {
             if (System.currentTimeMillis() >= nextPrintTime) {
                 println("Job: I am sleeping ${i++}")
                 nextPrintTime += 500L

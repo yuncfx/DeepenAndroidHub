@@ -1,4 +1,4 @@
-package com.ssy.coroutines
+package com.ssy.coroutines.samples
 
 import kotlinx.coroutines.*
 
