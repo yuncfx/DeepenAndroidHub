@@ -17,12 +17,15 @@ fun main() = runBlocking<Unit> {
     } finally {
         println("Computation failed")
     }
+
+    // never print
+    println("never print this line")
 }
 
 private suspend fun failureComputation(): Int = coroutineScope {
     val value1 = async<Int> {
         try {
-            delay(900000)
+            delay(9000)
             50
         } finally {
             println("value1 was cancelled")

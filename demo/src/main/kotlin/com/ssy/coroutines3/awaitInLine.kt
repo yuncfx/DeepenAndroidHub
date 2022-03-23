@@ -11,9 +11,11 @@ fun main() = runBlocking {
     val elapsedTime = measureTimeMillis {
         val value1 = intValue1()
         val value2 = intValue2()
+        // 虽然是挂起函数，但是需要分别等待每个函数的执行结果，因此耗时是累加的
         println("$value1 + $value2 = ${value1 + value2}")
     }
 
+    // approximately 5031
     println("total time: $elapsedTime")
 }
 

@@ -19,8 +19,7 @@ fun main() = runBlocking() {
         val value2 = async (start = CoroutineStart.LAZY){ intValue2() }
         println("hello world")
 
-        Thread.sleep(6000)
-        // 尝试注释掉如下两行代码
+        // 如果不主动start， 则是在await里start的话，仍然没有实现并发
         value1.start()
         value2.start()
 
