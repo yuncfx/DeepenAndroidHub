@@ -2,6 +2,7 @@ package com.ssy.coroutines4
 
 import kotlinx.coroutines.*
 
+// todo understand
 class Activity : CoroutineScope by CoroutineScope(Dispatchers.Default) {
     fun destroy() {
         cancel()

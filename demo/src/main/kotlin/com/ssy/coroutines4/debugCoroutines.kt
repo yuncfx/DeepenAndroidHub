@@ -3,7 +3,7 @@ package com.ssy.coroutines4
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 
-private fun log(logMessage: String) = println("[${java.lang.Thread.currentThread().name}] $logMessage")
+private fun log(logMessage: String) = println("[${Thread.currentThread().name}] $logMessage")
 
 /**
  * 使用jvm参数 -Dkotlinx.coroutines.debug 打印线程所执行的协程的名字

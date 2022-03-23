@@ -10,8 +10,8 @@ import kotlinx.coroutines.runBlocking
  */
 fun main() = runBlocking<Unit>(CoroutineName("myCoroutine")) {
     launch(Dispatchers.Default + CoroutineName("helloWorld")) {
-        println("thread:${java.lang.Thread.currentThread().name}")
+        println("thread:${Thread.currentThread().name}")
     }
 
-    println("thread:${java.lang.Thread.currentThread().name}")
+    println("thread:${Thread.currentThread().name}")
 }

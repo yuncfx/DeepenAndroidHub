@@ -7,6 +7,7 @@ import kotlinx.coroutines.*
  */
 
 val threadLocal = ThreadLocal<String>()
+
 fun main() = runBlocking {
     threadLocal.set("hello")
     println("pre main, current thread:${Thread.currentThread()}, thread local value:${threadLocal.get()}")
