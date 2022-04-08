@@ -15,10 +15,9 @@ import kotlinx.coroutines.runBlocking
  * 3. reduce 把一系列的值，汇聚成单个的值
  */
 
-@ExperimentalCoroutinesApi
-fun main() = runBlocking {
-    val result = (1..4).asFlow().map {
-        it * it
-    }.reduce { a, b -> a + b }
-    println(result)
+@ExperimentalCoroutinesApi fun main() = runBlocking {
+  val result = (1..4).asFlow().map {
+    it * it
+  }.reduce { a, b -> a + b }
+  println(result)
 }

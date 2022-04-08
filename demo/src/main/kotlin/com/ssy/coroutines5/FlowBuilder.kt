@@ -7,8 +7,8 @@ import kotlinx.coroutines.runBlocking
 
 /**
  * Flow builder（构建器）
- * 1. flow是最经常使用的一种流构建器
- * 2. flowOf构建器可用于定义能够发射固定数量值的流
+ * 1. flow()是最经常使用的一种流构建器
+ * 2. flowOf()构建器可用于定义能够发射固定数量值的流
  * 3. 对于各种集合与序列来说，他们都提供了asFlow()扩展方法来将自身转换为Flow
  */
 fun main() = runBlocking {

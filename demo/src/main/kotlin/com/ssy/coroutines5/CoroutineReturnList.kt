@@ -1,6 +1,7 @@
 package com.ssy.coroutines5
 
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 /**
@@ -9,10 +10,13 @@ import kotlinx.coroutines.runBlocking
  * 2. 计算结果会一次性返回给调用端
  */
 private suspend fun myMethod(): List<String> {
-    delay(1000)
-    return listOf("hello", "world", "hello world")
+  delay(1000)
+  return listOf("hello", "world", "hello world")
 }
 
 fun main() = runBlocking {
+  launch {
     myMethod().forEach { println(it) }
+  }
+  println("test main")
 }

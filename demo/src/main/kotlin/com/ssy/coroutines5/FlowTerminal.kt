@@ -28,6 +28,7 @@ fun main() = runBlocking<Unit> {
 
     println("welcome")
 
+    // 可以重复收集
     flow.collect {
         println(it)
     }

@@ -8,16 +8,16 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
 private fun myMethod(): Flow<Int> = flow {
-    withContext(Dispatchers.Default) {
-        for (i in 1..4) {
-            Thread.sleep(100)
-            emit(i)
-        }
+  withContext(Dispatchers.Default) {
+    for (i in 1..4) { //            Thread.sleep(100)
+      emit(i)
     }
+  }
 }
 
+// TODO: java.lang.IllegalStateException: Flow invariant is violated
 fun main() = runBlocking {
-    myMethod().collect {
-        println(it)
-    }
+  myMethod().collect {
+    println(it)
+  }
 }

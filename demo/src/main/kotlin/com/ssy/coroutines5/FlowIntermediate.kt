@@ -16,16 +16,15 @@ import kotlinx.coroutines.runBlocking
  */
 
 private suspend fun myExecution(input: Int): String {
-    delay(1000)
-    return "output: $input"
+  delay(1000)
+  return "output: $input"
 }
 
 fun main() = runBlocking<Unit> {
-    (1..10)
-        .asFlow()
-        .filter { it > 5 }
-        .map { input -> myExecution(input) }
-        .collect {
-            println(it)
-        }
+  (1..10).asFlow().filter {
+    delay(100)
+    it > 5
+  }.map { input -> myExecution(input) }.collect {
+    println(it)
+  }
 }

@@ -32,5 +32,5 @@ fun main() = runBlocking<Unit> {
         }
     }
 
-    println("Finished")
+    println("cancelled")
 }
