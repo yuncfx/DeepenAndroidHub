@@ -12,7 +12,7 @@ import kotlinx.coroutines.runBlocking
  * 1. 命令式 finally
  * 2. 声明式
  */
-private fun myMethod(): Flow<Int> = (1..10).asFlow()
+private fun myMethod(): Flow<Int> = (1..5).asFlow()
 
 fun main() = runBlocking {
     try {
