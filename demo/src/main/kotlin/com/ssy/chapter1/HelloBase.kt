@@ -2,6 +2,8 @@ package com.ssy.chapter1
 
 import java.util.function.Consumer
 
+fun multiply(a: Int, b: Int) = a * b
+
 fun main(args: Array<String>) {
     println(sum(1, 2))
     println(sum2(2, 3))
@@ -15,7 +17,6 @@ fun main(args: Array<String>) {
 
     var c: Int
     c = 3
-    c = 4
 
     var d = 3
     d = 4
@@ -46,30 +47,6 @@ fun main(args: Array<String>) {
     for (item in m) {
         println(item)
     }
-
-    //    var x = 10
-//    var y = 20
-//
-//    var max: Int
-//    var min: Int
-//
-//    if (x > y) {
-//        max = x
-//        min = y
-//    } else {
-//        max = y
-//        min = x
-//    }
-//
-//    println("max = $max, min:$min")
-
-//    var x = 10
-//    var y = 20
-//
-//    var max = if (x > y) x else y
-//    var min = if (x > y) y else x
-//    println("max = $max, min:$min")
-
 
     // ctrl + shit + enter 快速换行格式化，补充大括号
     var max = if (x > y) {
