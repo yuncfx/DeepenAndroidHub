@@ -6,7 +6,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 /**
- * 使用JVM参数:-Dkotlinx.coroutine.debug
+ * 使用JVM参数:-Dkotlinx.coroutines.debug
  */
 fun main() = runBlocking<Unit>(CoroutineName("myCoroutine")) {
     launch(Dispatchers.Default + CoroutineName("helloWorld")) {
