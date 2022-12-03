@@ -1,3 +1,5 @@
+import bean.Person
+
 class TvMi1SController {
   fun turnOn() {}
 
@@ -40,4 +42,19 @@ fun main(args: Array<String>) {
   val t:MutableList<Cat> = mutableListOf<Cat>(Cat())
   // foo(t)
 
+  val restaurant = findRestaurant()
+  // 注意这里
+  val food: Any? = restaurant.orderFood() // 返回值可能是：任意类型
+
+}
+
+
+
+class Restaurant<T> {
+  fun orderFood(): T? {
+    return null
+  }
+}
+fun findRestaurant(): Restaurant<*> {
+  return Restaurant<Person>()
 }
