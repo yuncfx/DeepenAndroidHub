@@ -1,5 +1,9 @@
 package com.firstly
 
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
+
 fun main() {
 
   KtHttpV1.baseUrl = "https://api.github.com"
@@ -18,7 +22,7 @@ fun main() {
 }
 
 private fun testAsync() {
-  KtHttpV3.create<ApiServiceV3>()
+  KtHttpV3.create(ApiServiceV3::class.java)
     .repos(
       lang = "Kotlin",
       since = "weekly"
@@ -34,7 +38,40 @@ private fun testAsync() {
 }
 
 private fun testSync() {
-  val api: ApiServiceV3 = KtHttpV3.create<ApiServiceV3>()
+  val api: ApiServiceV3 = KtHttpV3.create<ApiServiceV3>(ApiServiceV3::class.java)
   val data: RepoList = api.reposSync(lang = "Kotlin", since = "weekly")
   println(data)
+}
+
+private fun testAwait(cancellable:Boolean) = runBlocking {
+  val start = System.currentTimeMillis()
+  val deferred = async {
+    if (cancellable) {
+      KtHttpV4.create(ApiServiceV3::class.java)
+        .repos(lang = "Kotlin", since = "weekly")
+        .awaitCancellable()
+    } else {
+      KtHttpV4.create(ApiServiceV3::class.java)
+        .repos(lang = "Kotlin", since = "weekly")
+        .await()
+    }
+  }
+
+  deferred.invokeOnCompletion {
+    println("invokeOnCompletion")
+  }
+
+  delay(50)
+
+  deferred.cancel()
+  println("Time cancel: ${System.currentTimeMillis() - start}")
+
+  try {
+    println(deferred.await())
+  } catch (e: Exception) {
+    println("Time exception: ${System.currentTimeMillis() - start}")
+    println("Catch exception:$e")
+  } finally {
+    println("Time total: ${System.currentTimeMillis() - start}")
+  }
 }
