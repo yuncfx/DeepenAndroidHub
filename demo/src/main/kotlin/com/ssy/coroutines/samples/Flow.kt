@@ -48,7 +48,11 @@ fun main() = runBlocking<Unit> {
     println("Calling collect again...")
     flow.collect { value -> println(value) }
 
-    (1..3).asFlow().collect { value -> println(value) }
+    (1..3).asFlow().onStart {
+        println("onStart")
+    }.onCompletion {
+        println("onCompletion")
+    }.collect { value -> println(value) }
 
     flowOf(1, 2, 3).collect { value -> println(value) }
 }

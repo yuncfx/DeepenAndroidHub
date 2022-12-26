@@ -25,8 +25,10 @@ fun main() = runBlocking {
         20
     }
 
+    log("haha, I go first")
     val aValue = a.await()
     val bValue = b.await()
 
+    // 此处并非是被await block，而是被runBlocking阻塞了
     log("The result is ${aValue * bValue}")
 }

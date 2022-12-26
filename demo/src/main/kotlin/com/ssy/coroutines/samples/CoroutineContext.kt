@@ -3,6 +3,7 @@ package com.ssy.coroutines.samples
 import kotlinx.coroutines.*
 
 fun main() = runBlocking<Unit> {
+    println("main                  : I'm working in thread ${Thread.currentThread().name}")
     launch { // 运行在父协程的上下文中，即 runBlocking 主协程
         println("main runBlocking      : I'm working in thread ${Thread.currentThread().name}")
     }

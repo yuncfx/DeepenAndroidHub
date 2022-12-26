@@ -11,7 +11,7 @@ fun main() = runBlocking {
     repeat(10000) {
         launch {
             delay(1000)
-            println("A")
+            println("${System.currentTimeMillis()} -----A")
         }
     }
 

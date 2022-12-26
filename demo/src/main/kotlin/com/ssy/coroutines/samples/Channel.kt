@@ -15,8 +15,19 @@ fun main() = runBlocking {
     launch {
         // 这里可能是消耗大量 CPU 运算的异步逻辑，我们将仅仅做 5 次整数的平方并发送
         for (x in 1..5) channel.send(x * x)
+        // channel也是协程资源，需要关闭
+        channel.close()
     }
     // 这里我们打印了 5 次被接收的整数：
     repeat(5) { println(channel.receive()) }
+    launch {
+        // 已经发送完了 就不会再打印了
+        for (i in channel) {
+            println("received $i")
+        }
+    }
     println("Done!")
+    val channel2 = produce<Int> {
+        send(5)
+    }
 }
