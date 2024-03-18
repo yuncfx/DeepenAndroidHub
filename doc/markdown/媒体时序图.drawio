@@ -1,9 +1,208 @@
-<mxfile host="app.diagrams.net" modified="2024-03-18T10:01:11.708Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" version="24.0.7" etag="nUuTZGmy_NaJ2rfq0YCV" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-18T11:51:40.573Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="je7_CX9tYYhaAknjdrOG" version="24.0.7" type="github">
   <diagram name="第 1 页" id="QfV7lhAFWPqX1seZr7yz">
-    <mxGraphModel>
+    <mxGraphModel dx="1386" dy="759" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-1" value="用户" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="170" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-2" value="媒体中心" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="280" y="100" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-3" value="三方音乐SDK" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="480" y="100" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-4" value="车辆中心" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="650" y="100" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-5" value="语音" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="810" y="100" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-6" value="双屏互动" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="970" y="100" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-7" value="CarService" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="100" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-8" value="埋点服务" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="100" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.444;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.309;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-10" target="iEOJ14VUrBSWucC0Jcrn-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="474" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-23" value="4. 点击播控按钮，PlayApi等接口" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-22">
+          <mxGeometry x="0.001" y="3" relative="1" as="geometry">
+            <mxPoint x="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-10" value="" style="line;strokeWidth=2;direction=south;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="255" width="10" height="660" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.194;exitY=0.4;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-11" target="iEOJ14VUrBSWucC0Jcrn-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="375" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="334" y="292" />
+              <mxPoint x="334" y="290" />
+              <mxPoint x="435" y="290" />
+              <mxPoint x="435" y="328" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-50" value="2. 获取数据，OpenApi等接口" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-25">
+          <mxGeometry x="0.2909" y="-2" relative="1" as="geometry">
+            <mxPoint x="1" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-11" value="" style="line;strokeWidth=2;direction=south;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="150" width="10" height="730" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-12" value="" style="line;strokeWidth=2;direction=south;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="150" width="10" height="710" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-13" value="" style="line;strokeWidth=2;direction=south;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="140" width="10" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-14" value="" style="line;strokeWidth=2;direction=south;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="150" width="10" height="710" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-15" value="" style="line;strokeWidth=2;direction=south;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="150" width="10" height="710" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-16" value="" style="line;strokeWidth=2;direction=south;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="150" width="10" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-17" value="" style="line;strokeWidth=2;direction=south;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="150" width="10" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.124;exitY=0.3;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="206" y="362.5" as="sourcePoint" />
+            <mxPoint x="330" y="272" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-20" value="1. 用户打开应用" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-19">
+          <mxGeometry x="0.0024" y="-7" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-31" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.567;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.552;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-11" target="iEOJ14VUrBSWucC0Jcrn-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="400" as="sourcePoint" />
+            <mxPoint x="700" y="365" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-32" value="5.2 跳转到WiFi设置startActivity" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-31">
+          <mxGeometry x="0.1215" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-36" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.126;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.114;exitY=0.1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-11" target="iEOJ14VUrBSWucC0Jcrn-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="465" as="sourcePoint" />
+            <mxPoint x="693" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-37" value="注册语音ISpeechClient.subscribeCommand()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-36">
+          <mxGeometry x="0.1215" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-38" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.796;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.779;exitY=0.4;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-11" target="iEOJ14VUrBSWucC0Jcrn-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="690" as="sourcePoint" />
+            <mxPoint x="873" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-39" value="7. 发送信息给双屏互动DoubleMediaProxy.sendMediaSource(json)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-38">
+          <mxGeometry x="0.1215" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-40" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.151;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.137;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="260" as="sourcePoint" />
+            <mxPoint x="1215" y="265.6899999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-41" value="注册方控事件CarDifferentApi.instance.registerMediaButtonCallback()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-40">
+          <mxGeometry x="0.1215" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-44" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.304;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.32;exitY=0.9;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-12" target="iEOJ14VUrBSWucC0Jcrn-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="410" as="sourcePoint" />
+            <mxPoint x="580" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-45" value="3. 返回数据，界面刷新" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-44">
+          <mxGeometry x="0.0589" y="1" relative="1" as="geometry">
+            <mxPoint y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-46" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.077;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.066;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-11" target="iEOJ14VUrBSWucC0Jcrn-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="420" as="sourcePoint" />
+            <mxPoint x="344" y="382" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-47" value="上传数据埋点：WTClickAgent.onEvents(cxt, eventId, map)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-46">
+          <mxGeometry x="0.0589" y="1" relative="1" as="geometry">
+            <mxPoint x="16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-54" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.638;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.656;exitY=0.9;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-13" target="iEOJ14VUrBSWucC0Jcrn-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="550" as="sourcePoint" />
+            <mxPoint x="713" y="558" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-55" value="6. 返回后，刷新界面" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-54">
+          <mxGeometry x="0.1215" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-56" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.479;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-16" target="iEOJ14VUrBSWucC0Jcrn-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="530" as="sourcePoint" />
+            <mxPoint x="780" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-57" value="回调方控事件onKeyEvent(keyEvent: KeyEvent?, i: Int?)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-56">
+          <mxGeometry x="0.0057" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-59" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.384;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="iEOJ14VUrBSWucC0Jcrn-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="870" y="430" as="sourcePoint" />
+            <mxPoint x="920" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-60" value="&amp;nbsp;回调语音方法@CommandAnnotation(method = &quot;Command://Tinnove.Music.Play&quot;)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-59">
+          <mxGeometry x="0.0151" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-62" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.555;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.462;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="iEOJ14VUrBSWucC0Jcrn-10" target="iEOJ14VUrBSWucC0Jcrn-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="570" as="sourcePoint" />
+            <mxPoint x="190" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iEOJ14VUrBSWucC0Jcrn-63" value="5.1 无网点击跳转" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iEOJ14VUrBSWucC0Jcrn-62">
+          <mxGeometry x="-0.0295" y="6" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
