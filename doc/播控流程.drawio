@@ -1,9 +1,48 @@
-<mxfile host="app.diagrams.net" modified="2024-03-18T06:26:18.415Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" version="24.0.7" etag="HaMGWceoZdLVrftdi-fP" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-18T06:31:47.308Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="kzvMwDyA6OQ7IhATGb3c" version="24.0.7" type="github">
   <diagram name="第 1 页" id="Jt81qwoU_8EIQBXdyNeV">
-    <mxGraphModel>
+    <mxGraphModel dx="1386" dy="759" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vm2IYsjZoZjuK-RpaDsR-1" target="vm2IYsjZoZjuK-RpaDsR-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-1" value="开始" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vm2IYsjZoZjuK-RpaDsR-6" target="vm2IYsjZoZjuK-RpaDsR-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-6" value="已有音乐播放信息" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vm2IYsjZoZjuK-RpaDsR-8" target="vm2IYsjZoZjuK-RpaDsR-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-8" value="toggle播放暂停按钮、上下一曲、快进快退" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vm2IYsjZoZjuK-RpaDsR-10" target="vm2IYsjZoZjuK-RpaDsR-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-10" value="调用暂停/播放功能、上下一曲、快进快退功能" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vm2IYsjZoZjuK-RpaDsR-12" target="vm2IYsjZoZjuK-RpaDsR-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-12" value="回调暂停/播放状态、歌曲信息切换、进度变化" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="610" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vm2IYsjZoZjuK-RpaDsR-14" target="vm2IYsjZoZjuK-RpaDsR-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-14" value="刷新UI" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vm2IYsjZoZjuK-RpaDsR-16" value="结束" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="870" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
